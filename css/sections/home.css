@@ -1,0 +1,33 @@
+/* Home Section Styles */
+#home {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr; /* Tres columnas: izquierda, principal, derecha */
+    gap: 20px; /* Espaciado entre columnas */
+    padding: 20px;
+    height: 100%; /* Ocupa toda la altura disponible */
+}
+
+#home .column {
+    background-color: #f8c8dc; /* Color pastel claro */
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#home .column.main {
+    background-color: #fff; /* Fondo blanco para la columna principal */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+#home .column img {
+    max-width: 75%; /* Asegura que la imagen no exceda el ancho del contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+    display: block; /* Elimina el espacio inferior causado por imágenes inline */
+    margin: 0 auto; /* Centra la imagen horizontalmente */
+}
+
+#home .column h1 {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px; /* Espaciado inferior */
+}
