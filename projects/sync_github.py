@@ -1,6 +1,7 @@
 import sqlite3
 import requests
 from urllib.parse import urlparse
+import os
 
 def get_last_commit_date(repo_url):
     # Extrae usuario y repo de la URL
@@ -35,5 +36,5 @@ def update_projects_db(db_path):
     conn.close()
 
 if __name__ == "__main__":
-    db_path = "projects.db"  # Cambia la ruta si es necesario
+    db_path = os.path.join(os.path.dirname(__file__), "projects.db")
     update_projects_db(db_path)
