@@ -31,7 +31,6 @@ function loadSidebar() {
       // Reasignar eventos a los botones después de cargar el sidebar
       document.getElementById('btnHome').addEventListener('click', () => loadSection('home'));
       document.getElementById('btnProjects').addEventListener('click', () => loadSection('projects'));
-      document.getElementById('btnBlog').addEventListener('click', () => loadSection('blog'));
     })
     .catch(error => {
       console.error(error);
@@ -70,19 +69,7 @@ function loadSection(section) {
       content.innerHTML = html;
       loadStylesheet(section);
       if (section === 'projects') {
-        fetch('/projects')
-          .then(response => {
-            if (!response.ok) throw new Error('Error al cargar los proyectos');
-            return response.text();
-          })
-          .then(projectsHtml => {
-            const projectList = document.getElementById('project-list');
-            if (projectList) projectList.innerHTML = projectsHtml;
-          })
-          .catch(error => {
-            const projectList = document.getElementById('project-list');
-            if (projectList) projectList.innerHTML = `<p>${error.message}</p>`;
-          });
+        // Dejar vacío, no cargar nada adicional para projects
       }
     })
     .catch(error => {
