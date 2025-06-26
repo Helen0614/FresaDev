@@ -1,33 +1,245 @@
 /* Home Section Styles */
 #home {
     display: grid;
-    grid-template-columns: 1fr 2fr 1fr; /* Tres columnas: izquierda, principal, derecha */
-    gap: 20px; /* Espaciado entre columnas */
+    grid-template-columns: 1fr 2fr 1fr; 
+    gap: 20px;
     padding: 20px;
-    height: 100%; /* Ocupa toda la altura disponible */
+    height: 100%;
+    align-items: center;
 }
 
-#home .column {
-    background-color: #f8c8dc; /* Color pastel claro */
-    padding: 20px;
-    border-radius: 5px;
+/***************/
+/* Left column */
+/***************/
+
+#home .column-left {
+    background-color: #f8c8dc;  
+    padding: 20px 10px 20px 10px;
+    border-radius: 12px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-#home .column.main {
-    background-color: #fff; /* Fondo blanco para la columna principal */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-#home .column img {
-    max-width: 75%; /* Asegura que la imagen no exceda el ancho del contenedor */
-    height: auto; /* Mantiene la proporción de la imagen */
-    display: block; /* Elimina el espacio inferior causado por imágenes inline */
-    margin: 0 auto; /* Centra la imagen horizontalmente */
+#home .column-left img {
+    max-width: 64%; 
+    height: auto; 
+    display: block; 
+    margin: 0 auto; 
 }
 
-#home .column h1 {
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 1.5rem;
-    color: #333;
-    margin-bottom: 10px; /* Espaciado inferior */
+#home .column-left h1 {
+    font-family: 'Quicksand';
+    font-size: 2rem;
+    color: #C2185B;
+    margin-bottom: 10px; 
+    text-align: center;
+}
+
+#home .column-left h2 {
+    font-family: 'Quicksand';
+    font-size: 1.2rem;
+    color: #D63384;
+    margin-bottom: 8px; 
+}
+
+#home .column-left h6 {
+    font-family: 'Quicksand';
+    font-size: 1rem;
+    color: #ce6288;
+    margin-bottom: 12px; 
+    text-align: center;
+}
+
+#home .column-left p {
+    font-family: 'Quicksand';
+    font-size: 1rem;
+    color: #5A5A5A;
+    line-height: 1.5;
+    margin-bottom: 20px; 
+}
+
+/***************/
+/* Main column */
+/***************/
+
+#home .column-main {
+    background-color: #fff;
+    padding: 20px 20px 20px 20px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#home .main-rect {
+    background: #fcd9e7ae;
+    height: 55vh;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+#home .main-squares {
+    display: flex;
+    gap: 16px;
+    justify-content: space-between;
+}
+
+#home .main-square {
+    flex: 1 1 0;
+    aspect-ratio: 1 / 1;
+    background: #f1bed1;
+    border-radius: 12px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#home .main-square .icon {
+    font-size: 7rem;
+    color: #C2185B;
+    margin-bottom: 5px;
+}
+
+#home .main-square h3 {
+    font-family: 'Quicksand';
+    font-size: 2rem;
+    color: #D63384;
+    text-align: center;
+    padding: 5px;
+}
+
+#home .main-square a {
+    text-decoration: #D63384 underline;
+    color: #C2185B;
+    font-family: 'Quicksand';
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+/***************/
+/* Right column */
+/***************/
+
+#home .column-right {
+    background-color: #f8c8dc;  
+    padding: 20px 10px 20px 10px;
+    border-radius: 12px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+#home .column-right h1 {
+    font-family: 'Quicksand';
+    font-size: 2rem;
+    color: #C2185B;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+#home .roadmap {
+    display: flex;
+    flex-direction: column-reverse;
+    overflow-y: auto;
+    position: relative;
+    padding-left: 2rem;
+    border-left: 3px solid #f06292;
+    margin-left: 1rem;
+    scrollbar-width: thin;
+    scrollbar-color: #f06292 #f8c8dc;
+}
+
+#home .node h3, #home .node-done h3 {
+    font-family: 'Quicksand';
+    font-size: 1.1rem;
+    color: #D63384;
+    margin: 04px 0 8px 0;
+}
+
+#home .column-right p {
+    font-family: 'Quicksand';
+    font-size: 1rem;
+    color: #5A5A5A;
+    margin: 0;
+}
+
+#home .node, #home .node-done {
+    background: #fff;
+    border-radius: 15px;
+    margin-bottom: 10px;
+    padding: 05px 10px 10px 10px;
+    box-shadow: 0 2px 8px #f8c8dc22;
+    color: #ae24a0;
+    position: relative;
+}
+
+#home .subnode, #home .subnode-done {
+    padding: 1px 12px 1px 30px;
+    color: #ae24a0;
+}
+
+#home .node::before {
+    content: '';
+    position: absolute;
+    left: -2.3rem;
+    top: 1.4rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: white;
+    border: 2px solid #f06292;
+    z-index: 2;
+}
+
+#home .node-done::before {
+    content: '';
+    position: absolute;
+    left: -2.3rem;
+    top: 1.4rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: #b53761;
+    border: 2px solid #f06292;
+    z-index: 2;
+}
+
+#home .subnode::before {
+    content: '';
+    position: absolute;
+    left: 1.2rem;
+    width: 0.8rem;
+    height: 0.8rem;
+    background-color: white;
+    border: 1px solid #f06292;
+    border-radius: 50%;
+    z-index: 2;
+}
+
+#home .subnode-done::before {
+    content: '';
+    position: absolute;
+    left: 1.2rem;
+    width: 0.8rem;
+    height: 0.8rem;
+    background-color: #b53761;
+    border: 1px solid #f06292;
+    border-radius: 50%;
+    z-index: 2;
+}
+
+#home .roadmap::-webkit-scrollbar {
+    width: 8px;
+}
+#home .roadmap::-webkit-scrollbar-thumb {
+    background-color: #f06292;
+    border-radius: 6px;
+}
+#home .roadmap::-webkit-scrollbar-track {
+    background-color: #f8c8dc;
 }
