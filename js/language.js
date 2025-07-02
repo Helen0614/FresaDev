@@ -1,11 +1,9 @@
 // Language translations
 const translations = {
     es: {
-        home: "Home",
+        home: "Inicio",
         projects: "Proyectos",
-        title: "FresaDev",
         // Home section //
-        myName: "Helen Fiorella Medina",
         myRole: "Estudiante de Inteligencia Artificial",
         aboutMe: "Soy una estudiante apasionada por la Inteligencia Artificial. Me encanta aprender y enfrentar nuevos desafíos. En mi tiempo libre, disfruto explorar nuevas tecnologías y trabajar en proyectos que me permitan aplicar mis conocimientos.",
         connectLinkedIn: "Conecta conmigo",
@@ -32,9 +30,7 @@ const translations = {
     en: {
         home: "Home", 
         projects: "Projects",
-        title: "FresaDev",
         // Home section
-        myName: "Helen Fiorella Medina",
         myRole: "Artificial Intelligence Student",
         aboutMe: "I'm a passionate student of Artificial Intelligence. I love learning and facing new challenges. In my free time, I enjoy exploring new technologies and working on projects that allow me to apply my knowledge.",
         connectLinkedIn: "Connect with me",
@@ -61,9 +57,7 @@ const translations = {
     eu: {
         home: "Hasiera",
         projects: "Proiektuak", 
-        title: "FresaDev",
         // Home section
-        myName: "Helen Fiorella Medina",
         myRole: "Adimen Artifizialeko Ikaslea",
         aboutMe: "Adimen Artifizialaren inguruan grina duen ikaslea naiz. Ikasten eta erronka berriei aurre egiten maite dut. Nire libre denboran, teknologia berriak esploratzea eta nire ezagutzak aplikatzeko aukera ematen didaten proiektuetan lan egitea gustatzen zait.",
         connectLinkedIn: "Nirekin konektatu",
