@@ -104,6 +104,42 @@ document.addEventListener('DOMContentLoaded', function() {
         localStorage.setItem('selectedLanguage', selectedLanguage);
         updateLanguage(selectedLanguage);
     });
+    
+    // Add smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                const headerHeight = document.querySelector('.main-header').offsetHeight;
+                const elementPosition = target.offsetTop;
+                const offsetPosition = elementPosition - headerHeight;
+
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+    
+    // Add event listener for logo to clear URL hash
+    const logo = document.querySelector('.logo h1');
+    if (logo) {
+        logo.addEventListener('click', function(e) {
+            e.preventDefault();
+            // Remove hash from URL
+            history.pushState("", document.title, window.location.pathname + window.location.search);
+            // Scroll to top smoothly
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Make logo clickable
+        logo.style.cursor = 'pointer';
+    }
 });
 
 // Update page language

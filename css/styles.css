@@ -13,8 +13,7 @@ body {
     padding: 0; /* Elimina el padding por defecto */
     background-color: #ffe4e1; /* Fondo pastel */
     color: #333;
-    height: 100vh; /* Altura completa de la ventana */
-    overflow: hidden; /* Elimina la barra de scroll */
+    min-height: 100vh; /* Altura mínima completa de la ventana */
 }
 
 /* Custom Scrollbar Styles */
@@ -168,9 +167,7 @@ main {
     box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
-    overflow-y: auto; 
     transition: margin-left 0.3s ease;
-    height: calc(100vh - 80px); /* Ajustar según altura del header */
 }
 
 main h2 {
@@ -195,6 +192,7 @@ main p {
     flex-direction: column;
     gap: 50px;
     justify-content: center;
+    scroll-margin-top: 80px; /* Espacio para el header fijo */
 }
 
 .hero-content {
@@ -360,6 +358,7 @@ main p {
     min-height: 100vh;
     padding: 60px 40px;
     background: linear-gradient(135deg, #ffeef0 0%, #fff 50%, #f8f0ff 100%);
+    scroll-margin-top: 80px; /* Espacio para el header fijo */
 }
 
 .section-content {
@@ -729,6 +728,7 @@ main p {
     .hero-image {
         flex: none;
         order: 1;
+        margin-top: 20px; /* Añade espacio para evitar que se esconda detrás del header */
     }
     
     .personal-info {
@@ -755,6 +755,10 @@ main p {
     }
     
     /* Projects Section Responsive */
+    .section-content {
+        padding-bottom: 120px; /* Añade margen inferior para móvil */
+    }
+    
     .section-title {
         font-size: 2rem;
     }
@@ -802,6 +806,14 @@ main p {
         font-size: 0.8rem;
     }
     
+    .home-section {
+        padding-top: 60px; /* Más espacio superior para evitar que la imagen se esconda */
+    }
+    
+    .hero-image {
+        margin-top: 30px; /* Más margen superior en pantallas muy pequeñas */
+    }
+    
     .main-title {
         font-size: 2rem;
     }
@@ -813,5 +825,9 @@ main p {
     .profile-photo {
         width: 200px;
         height: 200px;
+    }
+    
+    .section-content {
+        padding-bottom: 150px; /* Más margen inferior para pantallas muy pequeñas */
     }
 }
