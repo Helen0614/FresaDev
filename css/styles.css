@@ -8,60 +8,13 @@
 html {
     scroll-behavior: smooth;
     scrollbar-width: thin;
-    scrollbar-color: #C2185B #f8f0ff;
+    scrollbar-color: #e64a88 #f8f0ff;
 }
 
 /* Configuración del cuerpo de la página */
 body {
-    display: flex;
-    flex-direction: column; 
-    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #ffe4e1; 
-    color: #333; 
-    min-height: 100vh;
-}
-
-/*
-=========================================
-   PERSONALIZACIÓN DE BARRAS DE SCROLL
-=========================================
-*/
-
-/* Estilos para navegadores WebKit (Chrome, Safari, Edge) */
-::-webkit-scrollbar {
-    width: 12px; 
-}
-
-/* Fondo de la barra de scroll */
-::-webkit-scrollbar-track {
-    background: linear-gradient(135deg, #ffeef0 0%, #f8f0ff 100%);
-    border-radius: 6px;
-    box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.1);
-}
-
-/* Elemento deslizable de la barra */
-::-webkit-scrollbar-thumb {
-    background: linear-gradient(135deg, #C2185B 0%, #f1bed1 50%, #ffc8dc 100%);
-    border-radius: 6px;
-    border: 2px solid #ffeef0;
-    transition: all 0.3s ease;
-}
-
-/* Estados de hover y activo de la barra de scroll */
-::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(135deg, #D63384 0%, #C2185B 50%, #f1bed1 100%);
-    border-color: #fff;
-    box-shadow: 0 2px 8px rgba(194, 24, 91, 0.3);
-}
-
-::-webkit-scrollbar-thumb:active {
-    background: linear-gradient(135deg, #A91653 0%, #C2185B 100%);
-}
-
-::-webkit-scrollbar-corner {
-    background: #f8f0ff;
 }
 
 /*
@@ -72,10 +25,8 @@ body {
 
 /* Contenedor principal del header */
 .main-header {
-    background: linear-gradient(135deg, #f8c8dc 0%, #f1bed1 100%);
+    background: linear-gradient(90deg, #ffedf4 0%, #e9c3cf 100%);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    z-index: 1000; 
-    position: sticky;
     top: 0;
     width: 100%;
 }
@@ -83,8 +34,8 @@ body {
 /* Contenido interno del header */
 .header-content {
     display: flex;
-    justify-content: space-between; 
     align-items: center;
+    justify-content: space-between;
     padding: 15px 30px;
     max-width: 1200px; 
     margin: 0 auto; 
@@ -92,16 +43,40 @@ body {
 
 /* Sección del logo */
 .logo {
-    display: flex;
-    align-items: center;
+    flex: 0 0 auto;
+    min-width: 110px; 
 }
 
 .logo h1 {
-    font-family: 'Quicksand', sans-serif;
+    font-family: 'Quicksand';
     font-size: 2rem;
-    color: #C2185B;
+    color: #c2185c;
     margin: 0;
-    font-weight: 600;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 0.2em solid rgb(128, 0, 68);
+    animation:
+        typeAndDelete 4s steps(11) infinite,
+        blinkCursor 0.5s step-end infinite alternate;
+}
+
+@keyframes blinkCursor {
+  50% {
+    border-right-color: transparent;
+  }
+}
+
+@keyframes typeAndDelete {
+  0%, 10% {
+    width: 0;
+  }
+  45%, 55% {
+    width: 4.5em;
+  }
+  90%,  100% {
+    width: 0;
+  }
 }
 
 /* Navegación principal */
@@ -233,6 +208,52 @@ main p {
     gap: 50px;
     justify-content: center; 
     scroll-margin-top: 80px; 
+    background: linear-gradient(-45deg, #feb8da, #f8c8dc, #fdebf3, #f1bed1, #ffc8dc);
+    background-size: 400% 400%;
+    animation: homeGradientShift 8s ease infinite;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Animación de degradado para la sección home */
+@keyframes homeGradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Partículas flotantes decorativas solo para home */
+.home-section::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        radial-gradient(circle at 20% 30%, rgba(194, 24, 91, 0.1) 2px, transparent 2px),
+        radial-gradient(circle at 80% 70%, rgba(241, 190, 209, 0.1) 2px, transparent 2px),
+        radial-gradient(circle at 60% 20%, rgba(255, 200, 220, 0.1) 1px, transparent 1px),
+        radial-gradient(circle at 40% 80%, rgba(248, 200, 220, 0.08) 1px, transparent 1px),
+        radial-gradient(circle at 90% 40%, rgba(194, 24, 91, 0.06) 1px, transparent 1px);
+    background-size: 100px 100px, 80px 80px, 60px 60px, 120px 120px, 90px 90px;
+    animation: floatingParticles 15s linear infinite;
+    pointer-events: none;
+    z-index: 1;
+}
+
+@keyframes floatingParticles {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    100% {
+        transform: translateY(-100px) rotate(360deg);
+    }
 }
 
 /* Contenido hero - información principal */
@@ -243,6 +264,11 @@ main p {
     max-width: 1200px;
     margin: 0 auto; 
     width: 100%;
+    position: relative;
+    z-index: 2;
+    background: #ffffffb8;
+    padding: 40px;
+    border-radius: 30px;
 }
 
 /* Información personal textual */
@@ -715,7 +741,7 @@ main p {
     color: white;
 }
 
-/* Subelementos del roadmap (años académicos) */
+/* Subelementos del roadmap */
 .roadmap-subitems {
     display: flex;
     flex-direction: column;
@@ -744,7 +770,7 @@ main p {
 }
 
 .roadmap-subitem span:first-child {
-    font-family: 'Quicksand', sans-serif;
+    font-family: 'Quicksand';
     font-weight: 500;
     color: #333;
 }
@@ -762,13 +788,11 @@ TABLETS Y PANTALLAS MEDIANAS (max-width: 1024px)
 ===================================================
 */
 @media (max-width: 1024px) {
-    /* Convertir grid a columna única */
     .section-content {
         grid-template-columns: 1fr; 
         gap: 40px;
     }
     
-    /* Reducir padding en sección de proyectos */
     .projects-roadmap-section {
         padding: 40px 20px;
     }
@@ -781,9 +805,9 @@ MÓVILES (max-width: 768px)
 */
 @media (max-width: 768px) {
     /*
-    =======================================
-    HEADER RESPONSIVO
-    =======================================
+    ============
+       HEADER
+    ============
     */
     .header-content {
         padding: 10px 15px;
@@ -795,7 +819,6 @@ MÓVILES (max-width: 768px)
         font-size: 1.5rem;
     }
     
-    /* Reorganizar navegación */
     .main-nav {
         flex: none;
         order: 3;
@@ -814,7 +837,6 @@ MÓVILES (max-width: 768px)
         padding: 5px 10px;
     }
     
-    /* Selector de idioma */
     .language-selector {
         order: 2; 
     }
@@ -825,9 +847,9 @@ MÓVILES (max-width: 768px)
     }
 
     /*
-    =======================================
-    SECCIÓN HOME RESPONSIVA
-    =======================================
+    ==========
+       HOME
+    ==========
     */
     .home-section {
         padding: 20px;
@@ -837,14 +859,12 @@ MÓVILES (max-width: 768px)
         padding-bottom: 300px;
     }
     
-    /* Layout vertical para hero */
     .hero-content {
         flex-direction: column;
         gap: 30px;
         text-align: center;
     }
     
-    /* Reorganizar orden: imagen primero */
     .hero-image {
         flex: none;
         order: 1;
@@ -852,10 +872,9 @@ MÓVILES (max-width: 768px)
     }
     
     .personal-info {
-        order: 2; /* Texto después de imagen */
+        order: 2;
     }
     
-    /* Ajustar tamaños de texto */
     .main-title {
         font-size: 2.5rem;
     }
@@ -864,13 +883,11 @@ MÓVILES (max-width: 768px)
         font-size: 1.4rem;
     }
     
-    /* Reducir tamaño de foto de perfil */
     .profile-photo {
         width: 250px;
         height: 250px;
     }
     
-    /* Tarjetas de contacto en columna */
     .contact-cards {
         flex-direction: column;
         gap: 20px;
@@ -890,13 +907,11 @@ MÓVILES (max-width: 768px)
         font-size: 2rem; 
     }
     
-    /* Header de proyecto en columna */
     .project-header {
         flex-direction: column;
         gap: 15px;
     }
     
-    /* Ajustar posición de línea de roadmap */
     .roadmap-container::before {
         left: 15px;
     }
@@ -905,7 +920,6 @@ MÓVILES (max-width: 768px)
         gap: 20px;
     }
     
-    /* Reducir tamaño de dots del roadmap */
     .roadmap-dot {
         width: 32px;
         height: 32px;
@@ -919,9 +933,9 @@ MÓVILES PEQUEÑOS (max-width: 480px)
 */
 @media (max-width: 480px) {
     /*
-    =======================================
-    HEADER ULTRA COMPACTO
-    =======================================
+    ============
+       HEADER 
+    ============
     */
     .header-content {
         padding: 8px 10px;
@@ -946,9 +960,9 @@ MÓVILES PEQUEÑOS (max-width: 480px)
     }
     
     /*
-    =======================================
-    HOME ULTRA COMPACTO
-    =======================================
+    ==========
+       HOME 
+    ==========
     */
     .home-section {
         padding-top: 60px;
@@ -958,7 +972,6 @@ MÓVILES PEQUEÑOS (max-width: 480px)
         margin-top: 30px; 
     }
     
-    /* Texto más pequeño */
     .main-title {
         font-size: 2rem;
     }
@@ -967,16 +980,15 @@ MÓVILES PEQUEÑOS (max-width: 480px)
         font-size: 1.2rem;
     }
     
-    /* Foto de perfil más pequeña */
     .profile-photo {
         width: 200px;
         height: 200px;
     }
     
     /*
-    =======================================
-    PROYECTOS ULTRA COMPACTO
-    =======================================
+    ===============
+       PROYECTOS
+    ===============
     */
     .section-content {
         padding-bottom: 150px; 
