@@ -4,17 +4,60 @@
 ============================================
 */
 
+/* Variables para tema claro (por defecto) */
+:root {
+    --bg-primary: #fff;
+    --bg-secondary: linear-gradient(135deg, #ffeef0 0%, #fff 50%, #f8f0ff 100%);
+    --bg-home: linear-gradient(-45deg, #feb8da, #f8c8dc, #fdebf3, #f1bed1, #ffc8dc);
+    --bg-header: linear-gradient(90deg, #ffedf4 0%, #e9c3cf 100%);
+    --text-primary: #333;
+    --text-secondary: #666;
+    --text-accent: #C2185B;
+    --border-color: #f1bed1;
+    --card-bg: white;
+    --shadow: rgba(194, 24, 91, 0.1);
+    --scrollbar-thumb: #e64a88;
+    --scrollbar-track: #f8f0ff;
+}
+
+/* Variables para tema oscuro */
+[data-theme="dark"] {
+    --bg-primary: #23141c;
+    --bg-secondary: linear-gradient(135deg, #3a1a2a 0%, #23141c 50%, #3d1a2a 100%);
+    --bg-home: linear-gradient(-45deg, #5c1f3a, #a03a6c, #3a1a2a, #23141c, #a03a6c);
+    --bg-header: linear-gradient(90deg, #3a1a2a 0%, #5c1f3a 100%);
+    --text-primary: #fff6fa;
+    --text-secondary: #ffe0ef;
+    --text-accent: #ff5a99;
+    --border-color: #a03a6c;
+    --card-bg: #2d1622;
+    --shadow: rgba(255, 90, 153, 0.18);
+    --scrollbar-thumb: #ff5a99;
+    --scrollbar-track: #3a1a2a;
+}
+
 /* Configuración HTML base */
 html {
     scroll-behavior: smooth;
     scrollbar-width: thin;
-    scrollbar-color: #e64a88 #f8f0ff;
+    scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
 }
 
 /* Configuración del cuerpo de la página */
 body {
     margin: 0;
     padding: 0;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Estilos para el fondo animado tipo Matrix */
+.matrix-background {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
 }
 
 /*
@@ -25,8 +68,8 @@ body {
 
 /* Contenedor principal del header */
 .main-header {
-    background: linear-gradient(90deg, #ffedf4 0%, #e9c3cf 100%);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background: var(--bg-header);
+    box-shadow: 0 2px 10px var(--shadow);
     top: 0;
     width: 100%;
 }
@@ -50,12 +93,12 @@ body {
 .logo h1 {
     font-family: 'Quicksand';
     font-size: 2rem;
-    color: #c2185c;
+    color: var(--text-accent);
     margin: 0;
     display: inline-block;
     white-space: nowrap;
     overflow: hidden;
-    border-right: 0.2em solid rgb(128, 0, 68);
+    border-right: 0.2em solid var(--text-accent);
     animation:
         typeAndDelete 4s steps(11) infinite,
         blinkCursor 0.5s step-end infinite alternate;
@@ -96,7 +139,7 @@ body {
 
 .main-nav a {
     font-family: 'Quicksand', sans-serif;
-    color: #C2185B;
+    color: var(--text-accent);
     text-decoration: none;
     font-weight: 500;
     font-size: 1.2rem;
@@ -105,7 +148,8 @@ body {
 }
 
 .main-nav a:hover {
-    color: #D63384;
+    color: var(--text-accent);
+    filter: brightness(1.2);
 }
 
 /* Efecto de subrayado animado */
@@ -116,7 +160,7 @@ body {
     left: 0;
     width: 0;
     height: 2px;
-    background-color: #D63384;
+    background-color: var(--text-accent);
     transition: width 0.3s ease;
 }
 
@@ -125,18 +169,18 @@ body {
 }
 
 /* Selector de idioma */
-.language-selector {
+.selector {
     display: flex;
     align-items: center;
 }
     
-.language-selector select {
+.selector select {
     font-family: 'Quicksand', sans-serif;
-    background: rgba(255, 255, 255, 0.9);
-    border: 2px solid #f1bed1;
+    background: var(--card-bg);
+    border: 2px solid var(--border-color);
     border-radius: 8px;
     padding: 8px 12px;
-    color: #C2185B;
+    color: var(--text-accent);
     font-size: 1rem;
     font-weight: 500;
     cursor: pointer;
@@ -144,15 +188,15 @@ body {
     outline: none;
 }
 
-.language-selector select:hover {
-    background: rgba(255, 255, 255, 1);
-    border-color: #D63384;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+.selector select:hover {
+    background: var(--card-bg);
+    border-color: var(--text-accent);
+    box-shadow: 0 2px 8px var(--shadow);
 }
 
-.language-selector select:focus {
-    border-color: #C2185B;
-    box-shadow: 0 0 0 3px rgba(194, 24, 91, 0.2);
+.selector select:focus {
+    border-color: var(--text-accent);
+    box-shadow: 0 0 0 3px var(--shadow);
 }
 
 /* Estilos para el botón de cambio de tema */
@@ -281,25 +325,24 @@ body {
 /* Elemento main - contenido principal */
 main {
     flex: 1;
-    background-color: #fff; 
-    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+    box-shadow: inset 0 0 5px var(--shadow);
     display: flex;
     flex-direction: column;
-    transition: margin-left 0.3s ease;
+    transition: margin-left 0.3s ease, background-color 0.3s ease;
 }
 
 /* Estilos generales para títulos y párrafos en main */
 main h2 {
     font-family: 'Courier New', Courier, monospace;
     font-size: 2rem;
-    color: #333;
+    color: var(--text-primary);
     margin: 20px;
 }
 
 main p {
     font-family: 'Arial', sans-serif;
     font-size: 1.2rem;
-    color: #666;
+    color: var(--text-secondary);
     margin: 20px; 
 }
 
@@ -318,52 +361,9 @@ main p {
     gap: 50px;
     justify-content: center; 
     scroll-margin-top: 80px; 
-    background: linear-gradient(-45deg, #feb8da, #f8c8dc, #fdebf3, #f1bed1, #ffc8dc);
     background-size: 400% 400%;
-    animation: homeGradientShift 8s ease infinite;
     position: relative;
     overflow: hidden;
-}
-
-/* Animación de degradado para la sección home */
-@keyframes homeGradientShift {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
-}
-
-/* Partículas flotantes decorativas solo para home */
-.home-section::before {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: 
-        radial-gradient(circle at 20% 30%, rgba(194, 24, 91, 0.1) 2px, transparent 2px),
-        radial-gradient(circle at 80% 70%, rgba(241, 190, 209, 0.1) 2px, transparent 2px),
-        radial-gradient(circle at 60% 20%, rgba(255, 200, 220, 0.1) 1px, transparent 1px),
-        radial-gradient(circle at 40% 80%, rgba(248, 200, 220, 0.08) 1px, transparent 1px),
-        radial-gradient(circle at 90% 40%, rgba(194, 24, 91, 0.06) 1px, transparent 1px);
-    background-size: 100px 100px, 80px 80px, 60px 60px, 120px 120px, 90px 90px;
-    animation: floatingParticles 15s linear infinite;
-    pointer-events: none;
-    z-index: 1;
-}
-
-@keyframes floatingParticles {
-    0% {
-        transform: translateY(0px) rotate(0deg);
-    }
-    100% {
-        transform: translateY(-100px) rotate(360deg);
-    }
 }
 
 /* Contenido hero - información principal */
@@ -376,9 +376,10 @@ main p {
     width: 100%;
     position: relative;
     z-index: 2;
-    background: #ffffffb8;
+    background: rgba(255, 255, 255, 0.72);
     padding: 40px;
     border-radius: 30px;
+    transition: background 0.3s ease;
 }
 
 /* Información personal textual */
@@ -392,7 +393,7 @@ main p {
 .main-title {
     font-family: 'Quicksand', sans-serif;
     font-size: 3.5rem;
-    color: #C2185B; 
+    color: var(--text-accent); 
     margin: 0;
     font-weight: 600;
     line-height: 1.2;
@@ -401,7 +402,7 @@ main p {
 .subtitle {
     font-family: 'Quicksand', sans-serif;
     font-size: 1.8rem;
-    color: #f1bed1; 
+    color: var(--text-secondary); 
     margin: 0;
     font-weight: 500;
 }
@@ -409,7 +410,7 @@ main p {
 .about-text {
     font-family: 'Quicksand', sans-serif;
     font-size: 1.2rem;
-    color: #666;
+    color: var(--text-secondary);
     line-height: 1.6;
     margin: 0;
     max-width: 500px; /* Limitar ancho para legibilidad */
@@ -428,15 +429,15 @@ main p {
     height: 350px;
     border-radius: 50%; 
     object-fit: cover; 
-    border: 6px solid #f1bed1;
-    box-shadow: 0 10px 30px rgba(194, 24, 91, 0.2);
+    border: 6px solid var(--border-color);
+    box-shadow: 0 10px 30px var(--shadow);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* Efecto hover en la foto de perfil */
 .profile-photo:hover {
     transform: scale(1.05); 
-    box-shadow: 0 15px 40px rgba(194, 24, 91, 0.3);
+    box-shadow: 0 15px 40px var(--shadow);
 }
 
 /*
@@ -458,8 +459,8 @@ main p {
 /* Estilo individual de cada tarjeta */
 .contact-card {
     flex: 1;
-    background: linear-gradient(135deg, #fff 0%, #ffeef0 100%);
-    border: 2px solid #f1bed1;
+    background: var(--card-bg);
+    border: 2px solid var(--border-color);
     border-radius: 16px;
     padding: 30px 20px;
     text-decoration: none;
@@ -491,8 +492,8 @@ main p {
 /* Estado hover de las tarjetas */
 .contact-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 15px 35px rgba(194, 24, 91, 0.2);
-    border-color: #C2185B;
+    box-shadow: 0 15px 35px var(--shadow);
+    border-color: var(--text-accent);
 }
 
 /* Iconos de las tarjetas de contacto */
@@ -532,7 +533,7 @@ main p {
 .card-content h3 {
     font-family: 'Quicksand', sans-serif;
     font-size: 1.3rem;
-    color: #C2185B;
+    color: var(--text-accent);
     margin: 0 0 8px 0;
     font-weight: 600;
 }
@@ -540,7 +541,7 @@ main p {
 .card-content p {
     font-family: 'Quicksand', sans-serif;
     font-size: 1rem;
-    color: #666;
+    color: var(--text-secondary);
     margin: 0;
     font-weight: 400;
 }
@@ -555,7 +556,7 @@ main p {
 .projects-roadmap-section {
     min-height: 100vh;
     padding: 60px 40px;
-    background: linear-gradient(135deg, #ffeef0 0%, #fff 50%, #f8f0ff 100%);
+    background: var(--bg-secondary);
     scroll-margin-top: 80px; 
 }
 
@@ -573,7 +574,7 @@ main p {
 .section-title {
     font-family: 'Quicksand', sans-serif;
     font-size: 2.5rem;
-    color: #C2185B;
+    color: var(--text-accent);
     margin: 0 0 40px 0;
     font-weight: 600;
     text-align: center;
@@ -589,7 +590,7 @@ main p {
     transform: translateX(-50%);
     width: 60px;
     height: 4px;
-    background: linear-gradient(90deg, #C2185B, #f1bed1);
+    background: linear-gradient(90deg, var(--text-accent), var(--border-color));
     border-radius: 2px;
 }
 
@@ -615,10 +616,10 @@ main p {
 
 /* Tarjeta individual de proyecto */
 .project-card {
-    background: white;
+    background: var(--card-bg);
     border-radius: 16px;
     padding: 30px;
-    box-shadow: 0 8px 25px rgba(194, 24, 91, 0.1);
+    box-shadow: 0 8px 25px var(--shadow);
     border: 2px solid transparent;
     transition: all 0.3s ease;
     position: relative;
@@ -633,7 +634,7 @@ main p {
     left: 0;
     right: 0;
     height: 4px;
-    background: linear-gradient(90deg, #C2185B, #f1bed1, #C2185B);
+    background: linear-gradient(90deg, var(--text-accent), var(--border-color), var(--text-accent));
     opacity: 0;
     transition: opacity 0.3s ease;
 }
@@ -807,23 +808,23 @@ main p {
 /* Contenido de cada elemento del roadmap */
 .roadmap-content {
     flex: 1;
-    background: white;
+    background: var(--card-bg);
     padding: 25px;
     border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(194, 24, 91, 0.1);
+    box-shadow: 0 4px 15px var(--shadow);
     border: 2px solid transparent;
     transition: all 0.3s ease;
 }
 
 /* Estado hover del contenido */
 .roadmap-item:hover .roadmap-content {
-    border-color: #f1bed1;
-    box-shadow: 0 8px 25px rgba(194, 24, 91, 0.15);
+    border-color: var(--border-color);
+    box-shadow: 0 8px 25px var(--shadow);
 }
 
 .roadmap-content h3 {
     font-family: 'Quicksand', sans-serif;
-    color: #C2185B;
+    color: var(--text-accent);
     margin: 0 0 10px 0;
     font-size: 1.3rem;
     font-weight: 600;
@@ -831,7 +832,7 @@ main p {
 
 .roadmap-content p {
     font-family: 'Quicksand', sans-serif;
-    color: #666;
+    color: var(--text-secondary);
     margin: 0 0 15px 0;
     line-height: 1.5;
 }
@@ -947,11 +948,11 @@ MÓVILES (max-width: 768px)
         padding: 5px 10px;
     }
     
-    .language-selector {
+    .selector {
         order: 2; 
     }
     
-    .language-selector select {
+    .selector select {
         padding: 6px 10px;
         font-size: 0.9rem;
     }
@@ -1064,7 +1065,7 @@ MÓVILES PEQUEÑOS (max-width: 480px)
         padding: 4px 8px;
     }
     
-    .language-selector select {
+    .selector select {
         padding: 5px 8px;
         font-size: 0.8rem;
     }
