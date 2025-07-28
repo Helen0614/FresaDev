@@ -8,7 +8,6 @@
 :root {
     --bg-primary: #fff;
     --bg-secondary: linear-gradient(135deg, #ffeef0 0%, #fff 50%, #f8f0ff 100%);
-    --bg-home: linear-gradient(-45deg, #feb8da, #f8c8dc, #fdebf3, #f1bed1, #ffc8dc);
     --bg-header: linear-gradient(90deg, #ffedf4 0%, #e9c3cf 100%);
     --text-primary: #333;
     --text-secondary: #666;
@@ -24,7 +23,6 @@
 [data-theme="dark"] {
     --bg-primary: #23141c;
     --bg-secondary: linear-gradient(135deg, #3a1a2a 0%, #23141c 50%, #3d1a2a 100%);
-    --bg-home: linear-gradient(-45deg, #5c1f3a, #a03a6c, #3a1a2a, #23141c, #a03a6c);
     --bg-header: linear-gradient(90deg, #3a1a2a 0%, #5c1f3a 100%);
     --text-primary: #fff6fa;
     --text-secondary: #ffe0ef;
@@ -36,14 +34,13 @@
     --scrollbar-track: #3a1a2a;
 }
 
-/* Configuración HTML base */
+/* Configuración base HTML y BODY */
 html {
     scroll-behavior: smooth;
     scrollbar-width: thin;
     scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
 }
 
-/* Configuración del cuerpo de la página */
 body {
     margin: 0;
     padding: 0;
@@ -53,9 +50,10 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    font-family: 'Quicksand', sans-serif;
 }
 
-/* Estilos para el fondo animado tipo Matrix */
+/* Estilos para el fondo animado Matrix */
 .matrix-background {
     position: absolute;
     top: 0;
@@ -78,17 +76,14 @@ body {
 ===================================
 */
 
-/* Contenedor principal del header */
 .main-header {
     background: var(--bg-header);
     box-shadow: 0 2px 10px var(--shadow);
-    top: 0;
     width: 100%;
     position: relative;
     z-index: 10;
 }
 
-/* Contenido interno del header */
 .header-content {
     display: flex;
     align-items: center;
@@ -98,14 +93,14 @@ body {
     margin: 0 auto; 
 }
 
-/* Sección del logo */
+/* Logo con animación de escribir */
 .logo {
     flex: 0 0 auto;
     min-width: 200px; 
 }
 
 .logo h1 {
-    font-family: 'Quicksand';
+    font-family: 'Quicksand', sans-serif;
     font-size: 2rem;
     color: var(--text-accent);
     margin: 0;
@@ -119,21 +114,13 @@ body {
 }
 
 @keyframes blinkCursor {
-  50% {
-    border-right-color: transparent;
-  }
+    50% { border-right-color: transparent; }
 }
 
 @keyframes typeAndDelete {
-  0%, 10% {
-    width: 0;
-  }
-  45%, 55% {
-    width: 4.5em;
-  }
-  90%,  100% {
-    width: 0;
-  }
+    0%, 10% { width: 0; }
+    45%, 55% { width: 4.5em; }
+    90%, 100% { width: 0; }
 }
 
 /* Navegación principal */
@@ -152,17 +139,15 @@ body {
 }
 
 .main-nav a {
-    font-family: 'Quicksand', sans-serif;
     color: var(--text-accent);
     text-decoration: none;
     font-weight: 500;
     font-size: 1.2rem;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
     position: relative;
 }
 
 .main-nav a:hover {
-    color: var(--text-accent);
     filter: brightness(1.2);
 }
 
@@ -182,14 +167,14 @@ body {
     width: 100%;
 }
 
-/* Selector de idioma */
+/* Selector de idioma y tema */
 .selector {
     display: flex;
     align-items: center;
+    gap: 20px;
 }
     
 .selector select {
-    font-family: 'Quicksand', sans-serif;
     background: var(--card-bg);
     border: 2px solid var(--border-color);
     border-radius: 8px;
@@ -202,125 +187,95 @@ body {
     outline: none;
 }
 
-.selector select:hover {
-    background: var(--card-bg);
+.selector select:hover,
+.selector select:focus {
     border-color: var(--text-accent);
     box-shadow: 0 2px 8px var(--shadow);
 }
 
-.selector select:focus {
-    border-color: var(--text-accent);
-    box-shadow: 0 0 0 3px var(--shadow);
-}
-
-/* Estilos para el botón de cambio de tema */
-/* From Uiverse.io by andrew-demchenk0 */ 
+/* Switch de tema */
 .switch {
-  font-size: 17px;
-  position: relative;
-  display: inline-block;
-  width: 64px;
-  height: 34px;
-    margin-left: 20px;
+    font-size: 17px;
+    position: relative;
+    display: inline-block;
+    width: 64px;
+    height: 34px;
 }
 
 .switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
+    opacity: 0;
+    width: 0;
+    height: 0;
 }
 
 .slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #73C0FC;
-  transition: .4s;
-  border-radius: 30px;
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #73C0FC;
+    transition: 0.4s;
+    border-radius: 30px;
 }
 
 .slider:before {
-  position: absolute;
-  content: "";
-  height: 30px;
-  width: 30px;
-  border-radius: 20px;
-  left: 2px;
-  bottom: 2px;
-  z-index: 2;
-  background-color: #e8e8e8;
-  transition: .4s;
+    position: absolute;
+    content: "";
+    height: 30px;
+    width: 30px;
+    border-radius: 20px;
+    left: 2px;
+    bottom: 2px;
+    z-index: 2;
+    background-color: #e8e8e8;
+    transition: 0.4s;
 }
 
 .sun svg {
-  position: absolute;
-  top: 6px;
-  left: 36px;
-  z-index: 1;
-  width: 24px;
-  height: 24px;
+    position: absolute;
+    top: 6px;
+    left: 36px;
+    z-index: 1;
+    width: 24px;
+    height: 24px;
+    animation: rotate 15s linear infinite;
 }
 
 .moon svg {
-  fill: #73C0FC;
-  position: absolute;
-  top: 5px;
-  left: 5px;
-  z-index: 1;
-  width: 24px;
-  height: 24px;
-}
-
-/* .switch:hover */.sun svg {
-  animation: rotate 15s linear infinite;
+    fill: #73C0FC;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    z-index: 1;
+    width: 24px;
+    height: 24px;
+    animation: tilt 5s linear infinite;
 }
 
 @keyframes rotate {
- 
-  0% {
-    transform: rotate(0);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-/* .switch:hover */.moon svg {
-  animation: tilt 5s linear infinite;
+    0% { transform: rotate(0); }
+    100% { transform: rotate(360deg); }
 }
 
 @keyframes tilt {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  25% {
-    transform: rotate(-10deg);
-  }
-
-  75% {
-    transform: rotate(10deg);
-  }
-
-  100% {
-    transform: rotate(0deg);
-  }
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(-10deg); }
+    75% { transform: rotate(10deg); }
+    100% { transform: rotate(0deg); }
 }
 
 .input:checked + .slider {
-  background-color: #183153;
+    background-color: #183153;
 }
 
 .input:focus + .slider {
-  box-shadow: 0 0 1px #183153;
+    box-shadow: 0 0 1px #183153;
 }
 
 .input:checked + .slider:before {
-  transform: translateX(30px);
+    transform: translateX(30px);
 }
 
 /*
@@ -329,7 +284,6 @@ body {
 ==========================================
 */
 
-/* Contenedor principal de la página */
 .main-container {
     display: flex;
     flex: 1;
@@ -339,30 +293,14 @@ body {
     min-height: 100vh;
 }
 
-/* Elemento main - contenido principal */
 main {
     flex: 1;
     box-shadow: inset 0 0 5px var(--shadow);
     display: flex;
     flex-direction: column;
-    transition: margin-left 0.3s ease, background-color 0.3s ease;
+    transition: all 0.3s ease;
     position: relative;
     z-index: 2;
-}
-
-/* Estilos generales para títulos y párrafos en main */
-main h2 {
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 2rem;
-    color: var(--text-primary);
-    margin: 20px;
-}
-
-main p {
-    font-family: 'Arial', sans-serif;
-    font-size: 1.2rem;
-    color: var(--text-secondary);
-    margin: 20px; 
 }
 
 /*
@@ -371,7 +309,6 @@ main p {
 =====================================
 */
 
-/* Contenedor principal de la sección home */
 .home-section {
     padding: 40px;
     min-height: 100vh;
@@ -381,13 +318,12 @@ main p {
     justify-content: center; 
     scroll-margin-top: 80px; 
     background: transparent;
-    background-size: 400% 400%;
     position: relative;
     overflow: hidden;
     z-index: 3;
 }
 
-/* Contenido hero - información principal */
+/* Contenido hero principal */
 .hero-content {
     display: flex;
     align-items: center;
@@ -411,7 +347,7 @@ main p {
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Información personal textual */
+/* Información personal */
 .personal-info {
     flex: 1;
     display: flex;
@@ -420,7 +356,6 @@ main p {
 }
 
 .main-title {
-    font-family: 'Quicksand', sans-serif;
     font-size: 3.5rem;
     color: var(--text-accent); 
     margin: 0;
@@ -429,7 +364,6 @@ main p {
 }
 
 .subtitle {
-    font-family: 'Quicksand', sans-serif;
     font-size: 1.8rem;
     color: var(--text-secondary); 
     margin: 0;
@@ -437,17 +371,16 @@ main p {
 }
 
 .about-text {
-    font-family: 'Quicksand', sans-serif;
     font-size: 1.2rem;
     color: var(--text-secondary);
     line-height: 1.6;
     margin: 0;
-    max-width: 500px; /* Limitar ancho para legibilidad */
+    max-width: 500px;
 }
 
-/* Contenedor de la imagen de perfil */
+/* Imagen de perfil */
 .hero-image {
-    flex: 0 0 350px; /* Tamaño fijo */
+    flex: 0 0 350px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -463,7 +396,6 @@ main p {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Efecto hover en la foto de perfil */
 .profile-photo:hover {
     transform: scale(1.05); 
     box-shadow: 0 15px 40px var(--shadow);
@@ -475,7 +407,6 @@ main p {
 ===========================================
 */
 
-/* Contenedor de las tarjetas de contacto */
 .contact-cards {
     display: flex;
     gap: 30px;
@@ -487,7 +418,6 @@ main p {
     z-index: 4;
 }
 
-/* Estilo individual de cada tarjeta */
 .contact-card {
     flex: 1;
     background: rgba(255, 255, 255, 0.9);
@@ -526,14 +456,13 @@ main p {
     left: 100%; 
 }
 
-/* Estado hover de las tarjetas */
 .contact-card:hover {
     transform: translateY(-8px);
     box-shadow: 0 15px 35px var(--shadow);
     border-color: var(--text-accent);
 }
 
-/* Iconos de las tarjetas de contacto */
+/* Iconos de contacto */
 .card-icon {
     width: 60px;
     height: 60px;
@@ -550,17 +479,9 @@ main p {
 }
 
 /* Colores específicos para cada plataforma */
-.linkedin .card-icon {
-    background: linear-gradient(135deg, #0077B5, #005885);
-}
-
-.gmail .card-icon {
-    background: linear-gradient(135deg, #EA4335, #D33B2C);
-}
-
-.github .card-icon {
-    background: linear-gradient(135deg, #333, #24292e);
-}
+.linkedin .card-icon { background: linear-gradient(135deg, #0077B5, #005885); }
+.gmail .card-icon { background: linear-gradient(135deg, #EA4335, #D33B2C); }
+.github .card-icon { background: linear-gradient(135deg, #333, #24292e); }
 
 /* Contenido textual de las tarjetas */
 .card-content {
@@ -568,7 +489,6 @@ main p {
 }
 
 .card-content h3 {
-    font-family: 'Quicksand', sans-serif;
     font-size: 1.3rem;
     color: var(--text-accent);
     margin: 0 0 8px 0;
@@ -576,7 +496,6 @@ main p {
 }
 
 .card-content p {
-    font-family: 'Quicksand', sans-serif;
     font-size: 1rem;
     color: var(--text-secondary);
     margin: 0;
@@ -585,12 +504,11 @@ main p {
 
 /*
 ===========================================
-   SECCIÓN PROYECTOS Y ROADMAP
+   SECCIÓN PROYECTOS
 ===========================================
 */
 
-/* Contenedor principal de la sección proyectos */
-.projects-roadmap-section {
+.projects-section {
     min-height: 100vh;
     padding: 60px 40px;
     background: var(--bg-secondary);
@@ -599,19 +517,13 @@ main p {
     z-index: 3;
 }
 
-/* Grid principal: proyectos + roadmap */
-.section-content {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 60px;
-    max-width: 1400px;
+.projects-content {
+    max-width: 1200px;
     margin: 0 auto;
-    height: 100%;
 }
 
 /* Títulos de sección */
 .section-title {
-    font-family: 'Quicksand', sans-serif;
     font-size: 2.5rem;
     color: var(--text-accent);
     margin: 0 0 40px 0;
@@ -620,7 +532,6 @@ main p {
     position: relative;
 }
 
-/* Decoración bajo los títulos */
 .section-title::after {
     content: '';
     position: absolute;
@@ -633,27 +544,13 @@ main p {
     border-radius: 2px;
 }
 
-/*
-===========================================
-   COLUMNA DE PROYECTOS
-===========================================
-*/
-
-/* Contenedor de la columna de proyectos */
-.projects-column {
-    display: flex;
-    flex-direction: column;
-}
-
 /* Grid de proyectos */
 .projects-grid {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     gap: 30px;
-    flex: 1;
 }
 
-/* Tarjeta individual de proyecto */
 .project-card {
     background: var(--card-bg);
     border-radius: 16px;
@@ -665,7 +562,6 @@ main p {
     overflow: hidden;
 }
 
-/* Barra superior decorativa de proyectos */
 .project-card::before {
     content: '';
     position: absolute;
@@ -682,14 +578,12 @@ main p {
     opacity: 1; 
 }
 
-/* Estado hover de tarjetas de proyecto */
 .project-card:hover {
     transform: translateY(-8px); 
-    box-shadow: 0 15px 40px rgba(194, 24, 91, 0.2);
-    border-color: #f1bed1;
+    box-shadow: 0 15px 40px var(--shadow);
+    border-color: var(--border-color);
 }
 
-/* Header de cada proyecto */
 .project-header {
     display: flex;
     justify-content: space-between;
@@ -699,14 +593,12 @@ main p {
 }
 
 .project-header h3 {
-    font-family: 'Quicksand', sans-serif;
     font-size: 1.5rem;
-    color: #C2185B;
+    color: var(--text-accent);
     margin: 0;
     font-weight: 600;
 }
 
-/* Tecnologías utilizadas */
 .project-tech {
     display: flex;
     gap: 8px;
@@ -714,25 +606,21 @@ main p {
 }
 
 .tech-tag {
-    background: linear-gradient(135deg, #f1bed1, #ffc8dc);
-    color: #C2185B;
+    background: linear-gradient(135deg, var(--border-color), #ffc8dc);
+    color: var(--text-accent);
     padding: 4px 12px;
     border-radius: 12px;
     font-size: 0.85rem;
     font-weight: 500;
-    font-family: 'Quicksand', sans-serif;
 }
 
-/* Descripción del proyecto */
 .project-description {
-    font-family: 'Quicksand', sans-serif;
-    color: #666;
+    color: var(--text-secondary);
     line-height: 1.6;
     margin: 0 0 20px 0;
     font-size: 1rem;
 }
 
-/* Enlaces del proyecto */
 .project-links {
     display: flex;
     gap: 15px;
@@ -742,232 +630,48 @@ main p {
     display: flex;
     align-items: center;
     gap: 8px;
-    color: #C2185B;
+    color: var(--text-accent);
     text-decoration: none;
-    font-family: 'Quicksand', sans-serif;
     font-weight: 500;
     padding: 8px 16px;
-    border: 2px solid #f1bed1;
+    border: 2px solid var(--border-color);
     border-radius: 8px;
     transition: all 0.3s ease;
 }
 
 .project-link:hover {
-    background: #C2185B;
+    background: var(--text-accent);
     color: white;
-    border-color: #C2185B;
+    border-color: var(--text-accent);
 }
-
-/*
-===========================================
-   COLUMNA DE ROADMAP
-===========================================
-*/
-
-/* Contenedor de la columna roadmap */
-.roadmap-column {
-    display: flex;
-    flex-direction: column;
-}
-
-/* Contenedor principal del roadmap */
-.roadmap-container {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    flex: 1;
-    position: relative;
-}
-
-/* Línea vertical del timeline */
-.roadmap-container::before {
-    content: '';
-    position: absolute;
-    left: 20px;
-    top: 30px;
-    bottom: 30px;
-    width: 3px;
-    background: linear-gradient(to bottom, #C2185B, #f1bed1, #ffc8dc);
-    border-radius: 2px;
-}
-
-/* Elemento individual del roadmap */
-.roadmap-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 25px;
-    position: relative;
-}
-
-/* Punto del timeline */
-.roadmap-dot {
-    width: 42px;
-    height: 42px;
-    border-radius: 50%;
-    background: white;
-    border: 4px solid #e0e0e0;
-    flex-shrink: 0;
-    position: relative;
-    z-index: 2; 
-    transition: all 0.3s ease;
-}
-
-/* Estado completado */
-.roadmap-item.completed .roadmap-dot {
-    background: linear-gradient(135deg, #C2185B, #D63384);
-    border-color: #C2185B;
-}
-
-/* Marca de verificación para completados */
-.roadmap-item.completed .roadmap-dot::after {
-    content: '✓';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    font-weight: bold;
-    font-size: 16px;
-}
-
-/* Estado actual (en progreso) */
-.roadmap-item.current .roadmap-dot {
-    background: linear-gradient(135deg, #f1bed1, #ffc8dc);
-    border-color: #f1bed1;
-    animation: pulse 2s infinite;
-}
-
-/* Animación de pulso para elemento actual */
-@keyframes pulse {
-    0% { box-shadow: 0 0 0 0 rgba(241, 190, 209, 0.7); }
-    70% { box-shadow: 0 0 0 10px rgba(241, 190, 209, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(241, 190, 209, 0); }
-}
-
-/* Contenido de cada elemento del roadmap */
-.roadmap-content {
-    flex: 1;
-    background: var(--card-bg);
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px var(--shadow);
-    border: 2px solid transparent;
-    transition: all 0.3s ease;
-}
-
-/* Estado hover del contenido */
-.roadmap-item:hover .roadmap-content {
-    border-color: var(--border-color);
-    box-shadow: 0 8px 25px var(--shadow);
-}
-
-.roadmap-content h3 {
-    font-family: 'Quicksand', sans-serif;
-    color: var(--text-accent);
-    margin: 0 0 10px 0;
-    font-size: 1.3rem;
-    font-weight: 600;
-}
-
-.roadmap-content p {
-    font-family: 'Quicksand', sans-serif;
-    color: var(--text-secondary);
-    margin: 0 0 15px 0;
-    line-height: 1.5;
-}
-
-/* Estado de progreso */
-.roadmap-status {
-    display: inline-block;
-    padding: 4px 12px;
-    border-radius: 12px;
-    font-size: 0.85rem;
-    font-weight: 500;
-    font-family: 'Quicksand', sans-serif;
-}
-
-.roadmap-status.completed {
-    background: linear-gradient(135deg, #C2185B, #D63384);
-    color: white;
-}
-
-/* Subelementos del roadmap */
-.roadmap-subitems {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-.roadmap-subitem {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 15px;
-    background: #f8f9fa;
-    border-radius: 8px;
-    border-left: 4px solid #e0e0e0;
-    transition: all 0.3s ease;
-}
-
-.roadmap-subitem.completed {
-    background: linear-gradient(135deg, rgba(194, 24, 91, 0.1), rgba(214, 51, 132, 0.1));
-    border-left-color: #C2185B;
-}
-
-.roadmap-subitem.current {
-    background: linear-gradient(135deg, rgba(241, 190, 209, 0.2), rgba(255, 200, 220, 0.2));
-    border-left-color: #f1bed1;
-}
-
-.roadmap-subitem span:first-child {
-    font-family: 'Quicksand';
-    font-weight: 500;
-    color: #333;
-}
-
 
 /*
 =======================================================
-    ADAPTACIONES PARA DIFERENTES TAMAÑOS DE PANTALLA
+    RESPONSIVE DESIGN - ADAPTACIONES MÓVILES
 =======================================================
 */
 
-/*
-===================================================
-TABLETS Y PANTALLAS MEDIANAS (max-width: 1024px)
-===================================================
-*/
+/* Tablets y pantallas medianas */
 @media (max-width: 1024px) {
-    .section-content {
-        grid-template-columns: 1fr; 
-        gap: 40px;
+    .projects-grid {
+        grid-template-columns: 1fr;
     }
     
-    .projects-roadmap-section {
+    .projects-section {
         padding: 40px 20px;
     }
 }
 
-/*
-===========================================
-MÓVILES (max-width: 768px)
-===========================================
-*/
+/* Móviles */
 @media (max-width: 768px) {
-    /*
-    ============
-       HEADER
-    ============
-    */
+    /* Header responsive */
     .header-content {
         padding: 10px 15px;
         flex-wrap: wrap;
         gap: 10px;
     }
     
-    .logo h1 {
-        font-size: 1.5rem;
-    }
+    .logo h1 { font-size: 1.5rem; }
     
     .main-nav {
         flex: none;
@@ -989,6 +693,7 @@ MÓVILES (max-width: 768px)
     
     .selector {
         order: 2; 
+        gap: 15px;
     }
     
     .selector select {
@@ -996,11 +701,7 @@ MÓVILES (max-width: 768px)
         font-size: 0.9rem;
     }
 
-    /*
-    ==========
-       HOME
-    ==========
-    */
+    /* Home responsive */
     .home-section {
         padding: 20px;
         gap: 30px;
@@ -1021,17 +722,9 @@ MÓVILES (max-width: 768px)
         margin-top: 20px; 
     }
     
-    .personal-info {
-        order: 2;
-    }
-    
-    .main-title {
-        font-size: 2.5rem;
-    }
-    
-    .subtitle {
-        font-size: 1.4rem;
-    }
+    .personal-info { order: 2; }
+    .main-title { font-size: 2.5rem; }
+    .subtitle { font-size: 1.4rem; }
     
     .profile-photo {
         width: 250px;
@@ -1044,16 +737,12 @@ MÓVILES (max-width: 768px)
         margin-bottom: 40px;
     }
     
-    /*
-    =======================================
-    SECCIÓN PROYECTOS RESPONSIVA
-    =======================================
-    */
-    .section-content {
-        padding-bottom: 120px; 
+    /* Proyectos responsive */
+    .projects-grid {
+        grid-template-columns: 1fr;
     }
     
-    .section-title {
+    .section-title { 
         font-size: 2rem; 
     }
     
@@ -1061,86 +750,19 @@ MÓVILES (max-width: 768px)
         flex-direction: column;
         gap: 15px;
     }
-    
-    .roadmap-container::before {
-        left: 15px;
-    }
-    
-    .roadmap-item {
-        gap: 20px;
-    }
-    
-    .roadmap-dot {
-        width: 32px;
-        height: 32px;
-    }
 }
 
-/*
-===========================================
-MÓVILES PEQUEÑOS (max-width: 480px)
-===========================================
-*/
+/* Móviles pequeños */
 @media (max-width: 480px) {
-    /*
-    ============
-       HEADER 
-    ============
-    */
-    .header-content {
-        padding: 8px 10px;
-    }
+    .header-content { padding: 8px 10px; }
+    .logo h1 { font-size: 1.3rem; }
+    .main-nav ul { gap: 15px; }
+    .main-nav a { font-size: 0.9rem; padding: 4px 8px; }
+    .selector select { padding: 5px 8px; font-size: 0.8rem; }
     
-    .logo h1 {
-        font-size: 1.3rem; 
-    }
-    
-    .main-nav ul {
-        gap: 15px;
-    }
-    
-    .main-nav a {
-        font-size: 0.9rem;
-        padding: 4px 8px;
-    }
-    
-    .selector select {
-        padding: 5px 8px;
-        font-size: 0.8rem;
-    }
-    
-    /*
-    ==========
-       HOME 
-    ==========
-    */
-    .home-section {
-        padding-top: 60px;
-    }
-    
-    .hero-image {
-        margin-top: 30px; 
-    }
-    
-    .main-title {
-        font-size: 2rem;
-    }
-    
-    .subtitle {
-        font-size: 1.2rem;
-    }
-    
-    .profile-photo {
-        width: 200px;
-        height: 200px;
-    }
-    
-    /*
-    ===============
-       PROYECTOS
-    ===============
-    */
-    .section-content {
-        padding-bottom: 150px; 
-    }
+    .home-section { padding-top: 60px; }
+    .hero-image { margin-top: 30px; }
+    .main-title { font-size: 2rem; }
+    .subtitle { font-size: 1.2rem; }
+    .profile-photo { width: 200px; height: 200px; }
 }
