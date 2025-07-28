@@ -1,12 +1,18 @@
 const canvas = document.getElementById('matrixCanvas');
 const ctx = canvas.getContext('2d');
 
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+// Función para redimensionar el canvas
+function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+}
+
+// Inicializar el canvas
+resizeCanvas();
 
 const fontSize = 16;
-const columns = Math.floor(canvas.width / fontSize);
-const drops = Array(columns).fill(1);
+let columns = Math.floor(canvas.width / fontSize);
+let drops = Array(columns).fill(1);
 
 // Función para obtener los colores según el tema actual
 function getMatrixColors() {
@@ -35,6 +41,13 @@ function drawMatrix() {
 
   ctx.fillStyle = colors.text;
   ctx.font = `${fontSize}px monospace`;
+
+  // Actualizar columns si el canvas cambió de tamaño
+  const currentColumns = Math.floor(canvas.width / fontSize);
+  if (currentColumns !== columns) {
+    columns = currentColumns;
+    drops = Array(columns).fill(1);
+  }
 
   for (let i = 0; i < drops.length; i++) {
     const text = Math.random() > 0.5 ? '1' : '0';
@@ -69,6 +82,7 @@ observer.observe(document.documentElement, {
 });
 
 window.addEventListener('resize', () => {
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
+  resizeCanvas();
+  columns = Math.floor(canvas.width / fontSize);
+  drops = Array(columns).fill(1);
 });
