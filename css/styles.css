@@ -382,6 +382,10 @@ main p {
     transition: background 0.3s ease;
 }
 
+[data-theme="dark"] .hero-content {
+    background: rgba(42, 42, 42, 0.8);
+}
+
 /* Información personal textual */
 .personal-info {
     flex: 1;
