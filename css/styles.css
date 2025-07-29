@@ -341,16 +341,18 @@ main::-webkit-scrollbar-thumb:hover {
 
 /* #region Home Section */
 .home-section {
-    min-height: calc(100vh - 80px);
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    gap: 50px;
+    gap: clamp(30px, 5vh, 60px);
     justify-content: center; 
     position: relative;
-    overflow: hidden;
+    overflow: visible;
     z-index: 1;
-    margin-top: 40px;
-    padding-top: 0;
+    margin-top: 0;
+    padding: clamp(20px, 4vh, 40px) clamp(20px, 3vw, 40px);
+    padding-bottom: clamp(40px, 6vh, 80px);
+    box-sizing: border-box;
 }
 /* #endregion */
 /* #endregion */
@@ -359,15 +361,16 @@ main::-webkit-scrollbar-thumb:hover {
 .hero-content {
     display: flex;
     align-items: center;
-    gap: clamp(40px, 6vw, 80px);
+    gap: clamp(20px, 4vw, 60px);
     width: 100%;
-    max-width: 70vw;
+    max-width: clamp(600px, 75vw, 1000px);
     position: relative;
     margin: 0 auto; 
-    padding: clamp(30px, 4vw, 50px);
-    border-radius: 30px;
+    padding: clamp(20px, 3vh, 40px) clamp(20px, 3vw, 40px);
+    border-radius: clamp(15px, 2vw, 30px);
     border: var(--border-hero);
     backdrop-filter: blur(10px);
+    box-sizing: border-box;
 }
 
 .personal-info {
@@ -402,43 +405,44 @@ main::-webkit-scrollbar-thumb:hover {
 
 /* #region Imagen de Perfil */
 .hero-image {
-    flex: 0 0 min(350px, 30vw);
+    flex: 0 0 min(300px, 25vw);
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .profile-photo {
-    width: min(350px, 30vw);
-    height: min(350px, 30vw);
+    width: min(300px, 25vw);
+    height: min(300px, 25vw);
     border-radius: 50%;
     object-fit: cover;
-    border: 6px solid var(--border-color);
-    box-shadow: 0 10px 30px var(--shadow);
+    border: clamp(3px, 0.5vw, 6px) solid var(--border-color);
+    box-shadow: 0 clamp(5px, 1vh, 20px) clamp(15px, 2vh, 30px) var(--shadow);
 }
 /* #endregion */
 
 /* #region Tarjetas de Contacto */
 .contact-cards {
      display: flex;
-     gap: clamp(16px, 3vw, 40px);
+     gap: clamp(12px, 2.5vw, 30px);
      justify-content: center;
-     max-width: 80vw;
-     margin: 0 auto 40px auto; /* [top] [right] [bottom] [left] ]*/
-     width: 100vw;
+     max-width: clamp(600px, 75vw, 900px);
+     margin: 0 auto;
+     width: 100%;
 }
 
 .contact-card {
      flex: 1;
      background: var(--bg-card, #fff);
      border: 2px solid var(--border-color);
-     border-radius: clamp(12px, 1vw, 24px);
-     padding: clamp(16px, 2vw, 32px) clamp(8px, 1vw, 20px);
+     border-radius: clamp(8px, 1vw, 20px);
+     padding: clamp(12px, 1.5vh, 24px) clamp(8px, 1vw, 16px);
      display: flex;
      flex-direction: column;
      align-items: center;
-     gap: clamp(8px, 1vw, 20px);
+     gap: clamp(6px, 1vh, 16px);
      transition: box-shadow 0.3s, border-color 0.3s, transform 0.3s;
+     box-sizing: border-box;
 }
 
 .contact-card:hover {
@@ -449,14 +453,14 @@ main::-webkit-scrollbar-thumb:hover {
 
 /* #region Iconos de Contacto */
 .card-icon {
-     width: clamp(32px, 4vw, 64px);
-     height: clamp(32px, 4vw, 64px);
+     width: clamp(28px, 3vw, 48px);
+     height: clamp(28px, 3vw, 48px);
      border-radius: 50%;
      display: flex;
      align-items: center;
      justify-content: center;
      color: white;
-     font-size: clamp(18px, 2vw, 32px);
+     font-size: clamp(14px, 1.5vw, 24px);
      transition: transform 0.3s;
 }
 
@@ -474,14 +478,14 @@ main::-webkit-scrollbar-thumb:hover {
 }
 
 .card-content h3 {
-     font-size: clamp(16px, 1.1vw, 22px);
+     font-size: clamp(14px, 1vw, 18px);
      color: var(--text-accent);
-     margin: 0 0 clamp(4px, 0.5vw, 10px) 0;
+     margin: 0 0 clamp(2px, 0.3vh, 6px) 0;
      font-weight: 600;
 }
 
 .card-content p {
-     font-size: clamp(13px, 0.9vw, 18px);
+     font-size: clamp(11px, 0.8vw, 14px);
      color: var(--text-secondary);
      margin: 0;
 }
@@ -622,6 +626,57 @@ main::-webkit-scrollbar-thumb:hover {
 ===========================================
 */
 
+/* #region Optimización para Zoom y Escalado */
+@media (min-width: 1600px) {
+    .home-section {
+        min-height: 100vh;
+        padding: clamp(40px, 5vh, 80px) clamp(30px, 3vw, 60px);
+    }
+    
+    .hero-content {
+        max-width: clamp(800px, 70vw, 1200px);
+        gap: clamp(30px, 4vw, 80px);
+        padding: clamp(30px, 3vh, 50px) clamp(30px, 3vw, 50px);
+    }
+    
+    .profile-photo {
+        width: min(350px, 22vw);
+        height: min(350px, 22vw);
+    }
+    
+    .contact-cards {
+        max-width: clamp(700px, 60vw, 1000px);
+        gap: clamp(20px, 2vw, 40px);
+    }
+}
+/* #endregion */
+
+/* #region Resoluciones con altura limitada */
+@media (max-height: 700px) {
+    .home-section {
+        min-height: auto;
+        gap: clamp(20px, 3vh, 35px);
+        padding: clamp(20px, 3vh, 40px) clamp(15px, 2vw, 30px);
+        justify-content: center;
+    }
+    
+    .hero-content {
+        gap: clamp(15px, 3vw, 40px);
+        padding: clamp(15px, 2vh, 25px) clamp(20px, 3vw, 30px);
+        max-width: clamp(600px, 80vw, 1100px);
+    }
+    
+    .contact-cards {
+        gap: clamp(10px, 2vw, 20px);
+    }
+    
+    .profile-photo {
+        width: min(220px, 25vw);
+        height: min(220px, 25vw);
+    }
+}
+/* #endregion */
+
 /* #region Tablets y Dispositivos Medianos (768px - 1199px) */
 @media (max-width: 1199px) {
     /* #region Header Responsive */
@@ -663,14 +718,39 @@ main::-webkit-scrollbar-thumb:hover {
     
     /* #region Home Section Responsive */
     .home-section {
-        padding: clamp(30px, 4vw, 50px) clamp(15px, 2vw, 25px);
+        min-height: 100vh;
+        gap: clamp(15px, 2.5vh, 30px);
+        padding: clamp(20px, 3vh, 40px) clamp(15px, 2vw, 25px);
+        padding-bottom: clamp(30px, 4vh, 50px);
+        justify-content: center;
+        overflow: visible;
+        box-sizing: border-box;
     }
 
     .hero-content {
         flex-direction: column;
-        max-width: 85vw;
-        gap: clamp(30px, 4vw, 50px);
+        max-width: clamp(450px, 80vw, 650px);
+        gap: clamp(15px, 2.5vh, 30px);
         text-align: center;
+        padding: clamp(15px, 2vh, 25px) clamp(15px, 2vw, 25px);
+        box-sizing: border-box;
+    }
+    
+    .main-title {
+        font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+    }
+    
+    .subtitle {
+        font-size: clamp(1.1rem, 1.8vw, 1.6rem);
+    }
+    
+    .about-text {
+        font-size: clamp(0.9rem, 1.2vw, 1.1rem);
+        max-width: 100%;
+    }
+    
+    .personal-info {
+        gap: clamp(10px, 1.5vh, 18px);
     }
     
     .hero-image {
@@ -679,23 +759,39 @@ main::-webkit-scrollbar-thumb:hover {
     }
     
     .profile-photo {
-        width: min(280px, 60vw);
-        height: min(280px, 60vw);
+        width: min(200px, 45vw);
+        height: min(200px, 45vw);
     }
     /* #endregion */
     
     /* #region Contact Cards Responsive */
     .contact-cards {
         flex-direction: column;
-        max-width: 400px;
-        gap: clamp(15px, 2vw, 25px);
-        margin-bottom: clamp(60px, 8vw, 100px);
+        max-width: clamp(280px, 50vw, 400px);
+        gap: clamp(10px, 1.5vh, 18px);
+        margin: 0 auto;
     }
     
     .contact-card {
         width: 100%;
         flex: none;
-        padding: clamp(15px, 2vw, 25px);
+        padding: clamp(10px, 1.5vh, 18px);
+        box-sizing: border-box;
+    }
+    
+    .card-icon {
+        width: clamp(24px, 2.5vw, 36px);
+        height: clamp(24px, 2.5vw, 36px);
+        font-size: clamp(12px, 1.2vw, 18px);
+    }
+    
+    .card-content h3 {
+        font-size: clamp(12px, 0.9vw, 16px);
+        margin: 0 0 clamp(2px, 0.2vh, 4px) 0;
+    }
+    
+    .card-content p {
+        font-size: clamp(10px, 0.7vw, 12px);
     }
     /* #endregion */
     
