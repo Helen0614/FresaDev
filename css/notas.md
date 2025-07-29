@@ -1,1 +1,0 @@
-Empieza a adaptar a partir del 1400 x lo que sea
