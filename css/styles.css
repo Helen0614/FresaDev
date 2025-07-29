@@ -690,15 +690,63 @@ main::-webkit-scrollbar-thumb:hover {
     .logo {
         order: 0;
         align-self: flex-start;
+        width: clamp(3.8em, 5vw, 4.2em);
+    }
+    
+    .logo h1 {
+        font-size: clamp(1.4rem, 2vw, 1.8rem);
+    }
+    
+    @keyframes typeAndDelete {
+        0%, 10% { width: 0; }
+        45%, 55% { width: clamp(3.8em, 5vw, 4.2em); }
+        90%, 100% { width: 0; }
     }
 
     .selector {
         order: 1;
         align-self: flex-end;
-        gap: clamp(12px, 1.5vw, 18px);
+        gap: clamp(8px, 1vw, 12px);
         position: absolute;
         top: 15px;
         right: 20px;
+    }
+    
+    .selector select {
+        padding: clamp(4px, 0.8vw, 8px) clamp(6px, 1vw, 10px);
+        font-size: clamp(0.7rem, 0.9vw, 1rem);
+        border-radius: 6px;
+    }
+    
+    .switch {
+        width: clamp(45px, 6vw, 55px);
+        height: clamp(24px, 3vw, 30px);
+        font-size: clamp(12px, 1.5vw, 16px);
+    }
+    
+    .slider:before {
+        height: clamp(20px, 2.5vw, 26px);
+        width: clamp(20px, 2.5vw, 26px);
+        left: 2px;
+        bottom: 2px;
+    }
+    
+    .input:checked + .slider:before {
+        transform: translateX(clamp(20px, 2.5vw, 26px));
+    }
+    
+    .sun svg {
+        width: clamp(16px, 2vw, 20px);
+        height: clamp(16px, 2vw, 20px);
+        top: clamp(4px, 0.5vw, 6px);
+        left: clamp(25px, 3vw, 30px);
+    }
+    
+    .moon svg {
+        width: clamp(16px, 2vw, 20px);
+        height: clamp(16px, 2vw, 20px);
+        top: clamp(4px, 0.5vw, 5px);
+        left: clamp(4px, 0.5vw, 5px);
     }
 
     .main-nav {
@@ -820,9 +868,62 @@ main::-webkit-scrollbar-thumb:hover {
         padding: clamp(10px, 1.2vw, 15px);
     }
     
+    .logo {
+        width: clamp(3.4em, 4.5vw, 3.8em);
+    }
+    
+    .logo h1 {
+        font-size: clamp(1.2rem, 1.8vw, 1.6rem);
+    }
+    
+    @keyframes typeAndDelete {
+        0%, 10% { width: 0; }
+        45%, 55% { width: clamp(3.4em, 4.5vw, 3.8em); }
+        90%, 100% { width: 0; }
+    }
+    
     .main-nav ul {
         gap: clamp(15px, 2vw, 25px);
         flex-wrap: wrap;
+    }
+    
+    .selector {
+        gap: clamp(6px, 0.8vw, 10px);
+    }
+    
+    .selector select {
+        padding: clamp(3px, 0.6vw, 6px) clamp(5px, 0.8vw, 8px);
+        font-size: clamp(0.6rem, 0.8vw, 0.9rem);
+        border-radius: 5px;
+    }
+    
+    .switch {
+        width: clamp(40px, 5vw, 50px);
+        height: clamp(20px, 2.5vw, 26px);
+        font-size: clamp(10px, 1.2vw, 14px);
+    }
+    
+    .slider:before {
+        height: clamp(16px, 2vw, 22px);
+        width: clamp(16px, 2vw, 22px);
+    }
+    
+    .input:checked + .slider:before {
+        transform: translateX(clamp(18px, 2.2vw, 22px));
+    }
+    
+    .sun svg {
+        width: clamp(12px, 1.5vw, 16px);
+        height: clamp(12px, 1.5vw, 16px);
+        top: clamp(3px, 0.4vw, 5px);
+        left: clamp(22px, 2.8vw, 26px);
+    }
+    
+    .moon svg {
+        width: clamp(12px, 1.5vw, 16px);
+        height: clamp(12px, 1.5vw, 16px);
+        top: clamp(3px, 0.4vw, 4px);
+        left: clamp(3px, 0.4vw, 4px);
     }
     /* #endregion */
     
@@ -890,12 +991,55 @@ main::-webkit-scrollbar-thumb:hover {
     }
     
     .logo {
-        width: clamp(3.2em, 4vw, 4.5em);
+        width: clamp(3rem, 4vw, 3.4em);
+    }
+    
+    .logo h1 {
+        font-size: clamp(1rem, 1.5vw, 1.4rem);
+    }
+    
+    .selector {
+        gap: clamp(4px, 0.6vw, 8px);
+    }
+    
+    .selector select {
+        padding: clamp(2px, 0.4vw, 4px) clamp(4px, 0.6vw, 6px);
+        font-size: clamp(0.5rem, 0.7vw, 0.8rem);
+        border-radius: 4px;
+    }
+    
+    .switch {
+        width: clamp(35px, 4.5vw, 45px);
+        height: clamp(18px, 2.2vw, 24px);
+        font-size: clamp(8px, 1vw, 12px);
+    }
+    
+    .slider:before {
+        height: clamp(14px, 1.8vw, 20px);
+        width: clamp(14px, 1.8vw, 20px);
+    }
+    
+    .input:checked + .slider:before {
+        transform: translateX(clamp(16px, 2vw, 20px));
+    }
+    
+    .sun svg {
+        width: clamp(10px, 1.2vw, 14px);
+        height: clamp(10px, 1.2vw, 14px);
+        top: clamp(2px, 0.3vw, 4px);
+        left: clamp(20px, 2.5vw, 24px);
+    }
+    
+    .moon svg {
+        width: clamp(10px, 1.2vw, 14px);
+        height: clamp(10px, 1.2vw, 14px);
+        top: clamp(2px, 0.3vw, 3px);
+        left: clamp(2px, 0.3vw, 3px);
     }
     
     @keyframes typeAndDelete {
         0%, 10% { width: 0; }
-        45%, 55% { width: clamp(3.2em, 4vw, 4.5em); }
+        45%, 55% { width: clamp(3rem, 4vw, 3.4em); }
         90%, 100% { width: 0; }
     }
     /* #endregion */
@@ -938,8 +1082,61 @@ main::-webkit-scrollbar-thumb:hover {
         padding: clamp(6px, 0.8vw, 10px);
     }
     
+    .logo {
+        width: clamp(2.6em, 3.5vw, 3rem);
+    }
+    
+    .logo h1 {
+        font-size: clamp(0.8rem, 1.2vw, 1.2rem);
+    }
+    
+    @keyframes typeAndDelete {
+        0%, 10% { width: 0; }
+        45%, 55% { width: clamp(2.6em, 3.5vw, 3rem); }
+        90%, 100% { width: 0; }
+    }
+    
     .main-nav ul {
         gap: clamp(8px, 1vw, 12px);
+    }
+    
+    .selector {
+        gap: clamp(3px, 0.4vw, 6px);
+    }
+    
+    .selector select {
+        padding: clamp(1px, 0.2vw, 3px) clamp(3px, 0.4vw, 5px);
+        font-size: clamp(0.4rem, 0.6vw, 0.7rem);
+        border-radius: 3px;
+    }
+    
+    .switch {
+        width: clamp(30px, 4vw, 40px);
+        height: clamp(16px, 2vw, 22px);
+        font-size: clamp(6px, 0.8vw, 10px);
+    }
+    
+    .slider:before {
+        height: clamp(12px, 1.6vw, 18px);
+        width: clamp(12px, 1.6vw, 18px);
+    }
+    
+    .input:checked + .slider:before {
+        transform: translateX(clamp(14px, 1.8vw, 18px));
+    }
+    
+    .sun svg {
+        width: clamp(8px, 1vw, 12px);
+        height: clamp(8px, 1vw, 12px);
+        top: clamp(2px, 0.2vw, 3px);
+        left: clamp(18px, 2.2vw, 22px);
+    }
+    
+    .moon svg {
+        width: clamp(8px, 1vw, 12px);
+        height: clamp(8px, 1vw, 12px);
+        top: clamp(2px, 0.2vw, 3px);
+        left: clamp(2px, 0.2vw, 3px);
     }
     
     .hero-content {
