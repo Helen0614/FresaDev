@@ -1,193 +1,250 @@
-# FresaDev - Personal Portfolio / Portfolio Personal
+# 🍓 FresaDev - Personal Portfolio
 
-[English](#english) | [Español](#español)
+> Modern AI student portfolio with strawberry-themed design and multilingual support
+
+![License](https://img.shields.io/badge/license-MIT-pink.svg)
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black)
+
+[🌐 Live Demo](https://helen0614.github.io/FresaDev/) | [English](#english) | [Español](#español)
+
+---
+
+## 📚 Table of Contents
+
+### English
+- [About](#about)
+- [Features](#features)
+- [Technologies](#technologies)
+- [Quick Start](#quick-start)
+- [Project Structure](#project-structure)
+- [Design](#design)
+- [Roadmap](#roadmap)
+- [Contributing](#contributing)
+- [Contact](#contact)
+
+### Español
+- [Acerca de](#acerca-de)
+- [Características](#características)
+- [Tecnologías](#tecnologías)
+- [Inicio Rápido](#inicio-rápido)
+- [Estructura](#estructura)
+- [Diseño](#diseño)
+- [Hoja de Ruta](#hoja-de-ruta)
+- [Contribuir](#contribuir)
+- [Contacto](#contacto)
 
 ---
 
 ## English
 
-### 🌟 About This Project
+### About
 
-FresaDev is a modern, responsive personal portfolio website showcasing my journey as an Artificial Intelligence student. The site features a clean, elegant design with a pink strawberry theme, multilingual support, and smooth user experience.
+FresaDev is a responsive personal portfolio showcasing my journey as an AI student. Features a strawberry-themed design with multilingual support (Spanish, English, Basque).
 
-### 🚀 Features
+### Features
 
-- **Responsive Design**: Optimized for desktop, tablet, and mobile devices
-- **Multilingual Support**: Available in Spanish, English, and Basque (Euskera)
-- **Modern UI/UX**: Clean, minimalist design with smooth animations
-- **Project Showcase**: Dedicated section displaying programming projects:
-  - **DigiNet**: Multilayer neural network in C for MNIST digit classification
-  - **Snake_C**: Classic Snake game implementation in C
-- **Learning Roadmap**: Visual timeline of academic progress and achievements
-- **Contact Integration**: Direct links to LinkedIn, GitHub, and email
-- **Custom Styling**: Beautiful gradient backgrounds and custom scrollbars
-- **Accessibility**: Semantic HTML and keyboard navigation support
-- **Language Persistence**: User language preference saved in localStorage
+✨ **Core Features**
+- 📱 Fully responsive design
+- 🌍 Multilingual support (ES/EN/EU)
+- 🎨 Strawberry-themed UI with smooth animations
+- ♿ Accessibility-focused development
 
-### 🛠️ Technologies Used
+🚀 **Showcase**
+- Programming projects display
+- Academic timeline
+- Contact integration
+- Language persistence
 
-- **HTML5**: Semantic markup structure
-- **CSS3**: Modern styling with flexbox, gradients, and animations
-- **JavaScript**: Interactive language switching functionality with localStorage persistence
-- **JSON**: Internationalization files for multilingual support
-- **Google Fonts**: Quicksand font family for typography
-- **SVG Icons**: Scalable vector graphics for social media icons
+### Technologies
 
-### 📁 Project Structure
+- **Frontend**: HTML5, CSS3, JavaScript
+- **Styling**: Flexbox, CSS Grid, Custom properties
+- **Fonts**: Google Fonts (Quicksand)
+- **Icons**: SVG graphics
+- **i18n**: JSON translation files
+
+### Quick Start
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/Helen0614/FresaDev.git
+   cd FresaDev
+   ```
+
+2. **Open locally**
+   ```bash
+   # Using Python
+   python -m http.server 8000
+   
+   # Using Node.js
+   npx serve .
+   
+   # Or simply open index.html in your browser
+   ```
+
+3. **Visit**: `http://localhost:8000`
+
+### Project Structure
 
 ```
 FresaDev/
-├── index.html          # Main HTML file
-├── README.md           # Project documentation
-├── css/
-│   └── styles.css      # Main stylesheet
-├── js/
-│   └── language.js     # Language switching functionality
-├── i18n/               # Internationalization files
-│   ├── en.json         # English translations
-│   ├── es.json         # Spanish translations
-│   └── eu.json         # Basque translations
-└── images/
-    ├── favicon.ico     # Website favicon
-    └── logo.jpg        # Profile image
+├── 📄 index.html          # Main HTML file
+├── 📚 README.md           # Documentation
+├── 🎨 css/
+│   └── styles.css         # Main stylesheet
+├── ⚡ js/
+│   ├── language.js        # i18n functionality
+│   ├── theme.js           # Theme management
+│   ├── projects.js        # Project data
+│   ├── navigation.js      # Navigation logic
+│   └── matrix.js          # Background effects
+├── 🌍 i18n/               # Translation files
+│   ├── en.json           # English
+│   ├── es.json           # Spanish
+│   └── eu.json           # Basque
+├── 🖼️ images/             # Assets
+└── 📁 projects/           # Project data
 ```
 
-### 🌐 Live Demo
+### Design
 
-Visit the live website: [FresaDev Portfolio](https://helen0614.github.io/FresaDev/)
+**Philosophy**: Soft, feminine aesthetic with strawberry inspiration
+- 🎨 Pastel pink color palette
+- ✨ Smooth gradient backgrounds
+- 📝 Elegant Quicksand typography
+- 🧭 Intuitive navigation
 
-### 📱 Responsive Design
+### Roadmap
 
-The website adapts seamlessly to different screen sizes:
-- **Desktop**: Full sidebar layout with complete navigation
-- **Tablet**: Optimized spacing and typography
-- **Mobile**: Stacked layout with touch-friendly interface
+- [x] 🌙 Dark mode toggle
+- [ ] 🔍 Project filtering system
+- [ ] 📝 Contact form implementation
+- [x] 🚀 Performance optimizations
 
-### 🎨 Design Philosophy
+### Contributing
 
-The design embraces a soft, feminine aesthetic with:
-- Pastel pink color palette inspired by strawberries
-- Smooth gradient backgrounds
-- Elegant typography with the Quicksand font
-- Intuitive navigation and user flow
-- Clean, minimalist approach to content presentation
+Feedback and suggestions welcome!
+- 🐛 Report issues
+- 💡 Suggest improvements
+- 🎨 Share design ideas
 
-### 📈 Future Enhancements
+### Contact
 
-- [ ] **Dark Mode Toggle**: Implement theme switching between light and dark modes
-- [ ] **Project Filtering**: Add category-based filtering for projects (by technology, type, etc.)
-- [ ] **Contact Form**: Implement a functional contact form with backend integration
-
-### 🤝 Contributing
-
-While this is a personal portfolio, suggestions and feedback are welcome! Feel free to:
-- Report bugs or issues
-- Suggest improvements
-- Share design ideas
-
-### 📄 License
-
-This project is open source. Feel free to use it as inspiration for your own portfolio projects.
-
-### 📞 Contact
-
-- **LinkedIn**: [Helen Fiorella Medina](https://www.linkedin.com/in/helenfiorellamo)
-- **Email**: fiorellamedinaortiz@gmail.com
-- **GitHub**: [@Helen0614](https://github.com/Helen0614)
+- 💼 [LinkedIn](https://www.linkedin.com/in/helenfiorellamo)
+- 📧 fiorellamedinaortiz@gmail.com
+- 🐙 [GitHub](https://github.com/Helen0614)
 
 ---
 
 ## Español
 
-### 🌟 Sobre Este Proyecto
+### Acerca de
 
-FresaDev es un sitio web de portfolio personal moderno y responsivo que muestra mi trayectoria como estudiante de Inteligencia Artificial. El sitio presenta un diseño limpio y elegante con un tema de fresa rosa, soporte multiidioma y una experiencia de usuario fluida.
+FresaDev es un portfolio personal responsivo que muestra mi trayectoria como estudiante de IA. Presenta un diseño temático de fresa con soporte multiidioma (Español, Inglés, Euskera).
 
-### 🚀 Características
+### Características
 
-- **Diseño Responsivo**: Optimizado para dispositivos de escritorio, tablet y móvil
-- **Soporte Multiidioma**: Disponible en español, inglés y euskera
-- **UI/UX Moderno**: Diseño limpio y minimalista con animaciones suaves
-- **Showcase de Proyectos**: Sección dedicada que muestra proyectos de programación:
-  - **DigiNet**: Red neuronal multicapa en C para clasificación de dígitos MNIST
-  - **Snake_C**: Implementación del juego clásico Snake en C
-- **Roadmap de Aprendizaje**: Timeline visual del progreso académico y logros
-- **Integración de Contacto**: Enlaces directos a LinkedIn, GitHub y email
-- **Estilizado Personalizado**: Fondos degradados hermosos y barras de scroll personalizadas
-- **Accesibilidad**: HTML semántico y soporte para navegación por teclado
-- **Persistencia de Idioma**: Preferencia de idioma del usuario guardada en localStorage
+✨ **Funcionalidades Principales**
+- 📱 Diseño completamente responsivo
+- 🌍 Soporte multiidioma (ES/EN/EU)
+- 🎨 UI temática de fresa con animaciones suaves
+- ♿ Desarrollo enfocado en accesibilidad
 
-### 🛠️ Tecnologías Utilizadas
+🚀 **Showcase**
+- Exhibición de proyectos de programación
+- Timeline académico
+- Integración de contacto
+- Persistencia de idioma
 
-- **HTML5**: Estructura de marcado semántico
-- **CSS3**: Estilizado moderno con flexbox, degradados y animaciones
-- **JavaScript**: Funcionalidad interactiva de cambio de idioma con persistencia en localStorage
-- **JSON**: Archivos de internacionalización para soporte multiidioma
-- **Google Fonts**: Familia de fuentes Quicksand para tipografía
-- **Iconos SVG**: Gráficos vectoriales escalables para iconos de redes sociales
+### Tecnologías
 
-### 📁 Estructura del Proyecto
+- **Frontend**: HTML5, CSS3, JavaScript
+- **Estilos**: Flexbox, CSS Grid, Propiedades personalizadas
+- **Fuentes**: Google Fonts (Quicksand)
+- **Iconos**: Gráficos SVG
+- **i18n**: Archivos de traducción JSON
+
+### Inicio Rápido
+
+1. **Clonar el repositorio**
+   ```bash
+   git clone https://github.com/Helen0614/FresaDev.git
+   cd FresaDev
+   ```
+
+2. **Abrir localmente**
+   ```bash
+   # Usando Python
+   python -m http.server 8000
+   
+   # Usando Node.js
+   npx serve .
+   
+   # O simplemente abrir index.html en tu navegador
+   ```
+
+3. **Visitar**: `http://localhost:8000`
+
+### Estructura
 
 ```
 FresaDev/
-├── index.html          # Archivo HTML principal
-├── README.md           # Documentación del proyecto
-├── css/
-│   └── styles.css      # Hoja de estilos principal
-├── js/
-│   └── language.js     # Funcionalidad de cambio de idioma
-├── i18n/               # Archivos de internacionalización
-│   ├── en.json         # Traducciones en inglés
-│   ├── es.json         # Traducciones en español
-│   └── eu.json         # Traducciones en euskera
-└── images/
-    ├── favicon.ico     # Favicon del sitio web
-    └── logo.jpg        # Imagen de perfil
+├── 📄 index.html          # Archivo HTML principal
+├── 📚 README.md           # Documentación
+├── 🎨 css/
+│   └── styles.css         # Hoja de estilos principal
+├── ⚡ js/
+│   ├── language.js        # Funcionalidad i18n
+│   ├── theme.js           # Gestión de temas
+│   ├── projects.js        # Datos de proyectos
+│   ├── navigation.js      # Lógica de navegación
+│   └── matrix.js          # Efectos de fondo
+├── 🌍 i18n/               # Archivos de traducción
+│   ├── en.json           # Inglés
+│   ├── es.json           # Español
+│   └── eu.json           # Euskera
+├── 🖼️ images/             # Recursos
+└── 📁 projects/           # Datos de proyectos
 ```
 
-### 🌐 Demo en Vivo
+### Diseño
 
-Visita el sitio web: [Portfolio FresaDev](https://helen0614.github.io/FresaDev/)
+**Filosofía**: Estética suave y femenina con inspiración de fresa
+- 🎨 Paleta de colores rosa pastel
+- ✨ Fondos degradados suaves
+- 📝 Tipografía elegante Quicksand
+- 🧭 Navegación intuitiva
 
-### 📱 Diseño Responsivo
+### Hoja de Ruta
 
-El sitio web se adapta perfectamente a diferentes tamaños de pantalla:
-- **Escritorio**: Layout completo con navegación completa
-- **Tablet**: Espaciado y tipografía optimizados
-- **Móvil**: Layout apilado con interfaz táctil amigable
+- [x] 🌙 Toggle de modo oscuro
+- [ ] 🔍 Sistema de filtrado de proyectos
+- [ ] 📝 Implementación de formulario de contacto
+- [x] 🚀 Optimizaciones de rendimiento
 
-### 🎨 Filosofía de Diseño
+### Contribuir
 
-El diseño abraza una estética suave y femenina con:
-- Paleta de colores rosa pastel inspirada en fresas
-- Fondos degradados suaves
-- Tipografía elegante con la fuente Quicksand
-- Navegación intuitiva y flujo de usuario
-- Enfoque limpio y minimalista para la presentación de contenido
+¡Feedback y sugerencias bienvenidos!
+- 🐛 Reportar problemas
+- 💡 Sugerir mejoras
+- 🎨 Compartir ideas de diseño
 
-### 📈 Futuras Mejoras
+### Contacto
 
-- [ ] **Toggle de Modo Oscuro**: Implementar cambio de tema entre modos claro y oscuro
-- [ ] **Filtrado de Proyectos**: Agregar filtrado basado en categorías para proyectos (por tecnología, tipo, etc.)
-- [ ] **Formulario de Contacto**: Implementar un formulario de contacto funcional con integración backend
-
-### 🤝 Contribuir
-
-Aunque este es un portfolio personal, ¡las sugerencias y feedback son bienvenidos! Siéntete libre de:
-- Reportar bugs o problemas
-- Sugerir mejoras
-- Compartir ideas de diseño
-
-### 📄 Licencia
-
-Este proyecto es de código abierto. Siéntete libre de usarlo como inspiración para tus propios proyectos de portfolio.
-
-### 📞 Contacto
-
-- **LinkedIn**: [Helen Fiorella Medina](https://www.linkedin.com/in/helenfiorellamo)
-- **Email**: fiorellamedinaortiz@gmail.com
-- **GitHub**: [@Helen0614](https://github.com/Helen0614)
+- 💼 [LinkedIn](https://www.linkedin.com/in/helenfiorellamo)
+- 📧 fiorellamedinaortiz@gmail.com
+- 🐙 [GitHub](https://github.com/Helen0614)
 
 ---
 
-*Made with 💖 by Helen Fiorella Medina | Updated July 2025*
+<div align="center">
+
+**Made with 💖 by Helen Fiorella Medina**
+
+*AI Student & Frontend Developer*
+
+[⭐ Star this repo](https://github.com/Helen0614/FresaDev) • [🍓 Visit Portfolio](https://helen0614.github.io/FresaDev/)
+
+</div>
