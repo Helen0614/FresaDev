@@ -1,8 +1,4 @@
-/*
-============================================
-   ESTILOS GENERALES Y CONFIGURACIÓN BASE
-============================================
-*/
+/* #region === ESTILOS GENERALES Y CONFIGURACIÓN BASE === */
 
 /* #region Variables CSS y Temas */
 
@@ -76,11 +72,9 @@ body {
 }
 /* #endregion */
 
-/*
-===================================
-   HEADER Y NAVEGACIÓN PRINCIPAL
-===================================
-*/
+/* #endregion */
+
+/* #region === HEADER Y NAVEGACIÓN PRINCIPAL === */
 
 /* #region Header Principal */
 .main-header {
@@ -279,11 +273,9 @@ body {
 }
 /* #endregion */
 
-/*
-==========================================
-   ESTRUCTURA PRINCIPAL DEL CONTENIDO
-==========================================
-*/
+/* #endregion */
+
+/* #region === ESTRUCTURA PRINCIPAL DEL CONTENIDO === */
 
 /* #region Layout Principal */
 .main-container {
@@ -304,8 +296,8 @@ main {
     transition: all 0.3s ease;
     position: relative;
     z-index: 2;
-    padding-top: 80px;
-    height: 100vh;
+    padding-top: 0;
+    min-height: 100vh;
     overflow-y: auto;
     overflow-x: hidden;
     scroll-behavior: smooth;
@@ -333,28 +325,27 @@ main::-webkit-scrollbar-thumb:hover {
 }
 /* #endregion */
 
-/*
-=====================================
-   SECCIÓN HOME - PÁGINA PRINCIPAL
-=====================================
-*/
+/* #endregion */
+
+/* #region === SECCIÓN HOME  === */
 
 /* #region Home Section */
 .home-section {
-    min-height: 100vh;
+    min-height: auto;
     display: flex;
     flex-direction: column;
     gap: clamp(30px, 5vh, 60px);
-    justify-content: center; 
+    justify-content: flex-start; 
     position: relative;
     overflow: visible;
     z-index: 1;
-    margin-top: 0;
-    padding: clamp(20px, 4vh, 40px) clamp(20px, 3vw, 40px);
+    margin-top: clamp(80px, 10vh, 120px);
+    padding-top: clamp(40px, 6vh, 80px);
+    padding-left: clamp(20px, 3vw, 40px);
+    padding-right: clamp(20px, 3vw, 40px);
     padding-bottom: clamp(40px, 6vh, 80px);
     box-sizing: border-box;
 }
-/* #endregion */
 /* #endregion */
 
 /* #region Hero Content */
@@ -491,11 +482,9 @@ main::-webkit-scrollbar-thumb:hover {
 }
 /* #endregion */
 
-/*
-===========================================
-    SECCIÓN PROYECTOS
-===========================================
-*/
+/* #endregion */
+
+/* #region === SECCIÓN PROYECTOS === */
 
 /* #region Proyectos Section */
 .projects-section {
@@ -620,153 +609,93 @@ main::-webkit-scrollbar-thumb:hover {
 }
 /* #endregion */
 
-/*
-===========================================
-    MEDIA QUERIES - RESPONSIVE DESIGN
-===========================================
-*/
-
-/* #region Desktop Grande (1600px+) */
-@media (min-width: 1600px) {
-    .home-section {
-        min-height: 100vh;
-        padding: clamp(40px, 5vh, 80px) clamp(30px, 3vw, 60px);
-    }
-    
-    .hero-content {
-        max-width: clamp(800px, 70vw, 1200px);
-        gap: clamp(30px, 4vw, 80px);
-        padding: clamp(30px, 3vh, 50px) clamp(30px, 3vw, 50px);
-    }
-    
-    .profile-photo {
-        width: min(350px, 22vw);
-        height: min(350px, 22vw);
-    }
-    
-    .contact-cards {
-        max-width: clamp(700px, 60vw, 1000px);
-        gap: clamp(20px, 2vw, 40px);
-    }
-}
 /* #endregion */
 
-/* #region Tablets y Laptops (768px - 1199px) */
+/* #region === MEDIA QUERIES - RESPONSIVE DESIGN === */
+
+/* #region Tablets y móviles (máximo 1199px) */
 @media (max-width: 1199px) {
-    /* Header adaptativo */
+    /* Header simplificado - todo en columna */
     .header-content {
-        max-width: 90vw;
         flex-direction: column;
-        gap: 0;
-        padding: clamp(12px, 1.5vw, 18px) clamp(15px, 2vw, 25px);
+        gap: 15px;
+        padding: 15px 20px;
+        max-width: 95vw;
     }
 
     .logo {
-        order: 0;
         align-self: flex-start;
-        width: clamp(3.8em, 5vw, 4.2em);
+        width: 4em;
     }
     
     .logo h1 {
-        font-size: clamp(1.4rem, 2vw, 1.8rem);
+        font-size: 1.6rem;
     }
     
     @keyframes typeAndDelete {
         0%, 10% { width: 0; }
-        45%, 55% { width: clamp(3.8em, 5vw, 4.2em); }
+        45%, 55% { width: 4em; }
         90%, 100% { width: 0; }
     }
 
     .selector {
-        order: 1;
-        align-self: flex-end;
-        gap: clamp(8px, 1vw, 12px);
         position: absolute;
         top: 15px;
         right: 20px;
+        gap: 10px;
     }
     
     .selector select {
-        padding: clamp(4px, 0.8vw, 8px) clamp(6px, 1vw, 10px);
-        font-size: clamp(0.7rem, 0.9vw, 1rem);
-        border-radius: 6px;
+        padding: 6px 10px;
+        font-size: 0.9rem;
     }
     
     .switch {
-        width: clamp(45px, 6vw, 55px);
-        height: clamp(24px, 3vw, 30px);
-        font-size: clamp(12px, 1.5vw, 16px);
+        width: 50px;
+        height: 26px;
     }
     
     .slider:before {
-        height: clamp(20px, 2.5vw, 26px);
-        width: clamp(20px, 2.5vw, 26px);
-        left: 2px;
-        bottom: 2px;
+        height: 22px;
+        width: 22px;
     }
     
     .input:checked + .slider:before {
-        transform: translateX(clamp(20px, 2.5vw, 26px));
+        transform: translateX(24px);
     }
     
     .sun svg {
-        width: clamp(16px, 2vw, 20px);
-        height: clamp(16px, 2vw, 20px);
-        top: clamp(4px, 0.5vw, 6px);
-        left: clamp(25px, 3vw, 30px);
+        width: 18px;
+        height: 18px;
+        top: 4px;
+        left: 28px;
     }
     
     .moon svg {
-        width: clamp(16px, 2vw, 20px);
-        height: clamp(16px, 2vw, 20px);
-        top: clamp(4px, 0.5vw, 5px);
-        left: clamp(4px, 0.5vw, 5px);
+        width: 18px;
+        height: 18px;
+        top: 4px;
+        left: 4px;
     }
 
     .main-nav {
-        order: 2;
         width: 100%;
-        display: flex;
         justify-content: center;
-        margin-top: clamp(15px, 2vw, 25px);
     }
 
     .main-nav ul {
-        gap: clamp(20px, 3vw, 35px);
+        gap: 25px;
+        flex-wrap: wrap;
         justify-content: center;
     }
 
-    /* Home Section - Layout vertical centrado */
-    .home-section {
-        min-height: 100vh;
-        gap: clamp(20px, 3vh, 40px);
-        padding: clamp(25px, 4vh, 50px) clamp(20px, 2.5vw, 35px);
-        justify-content: center;
-    }
-
+    /* Home Section - vertical y centrado */
     .hero-content {
         flex-direction: column;
-        max-width: clamp(500px, 75vw, 700px);
-        gap: clamp(20px, 3vh, 35px);
         text-align: center;
-        padding: clamp(20px, 3vh, 35px) clamp(20px, 2.5vw, 35px);
-    }
-    
-    .main-title {
-        font-size: clamp(2rem, 4vw, 3rem);
-    }
-    
-    .subtitle {
-        font-size: clamp(1.2rem, 2vw, 1.8rem);
-    }
-    
-    .about-text {
-        font-size: clamp(1rem, 1.4vw, 1.2rem);
-        max-width: 100%;
-    }
-    
-    .personal-info {
-        gap: clamp(12px, 2vh, 20px);
+        max-width: 90vw;
+        gap: 25px;
+        padding: 25px;
     }
     
     .hero-image {
@@ -774,167 +703,127 @@ main::-webkit-scrollbar-thumb:hover {
     }
     
     .profile-photo {
-        width: min(240px, 35vw);
-        height: min(240px, 35vw);
+        width: clamp(180px, 30vw, 250px);
+        height: clamp(180px, 30vw, 250px);
     }
     
-    /* Contact Cards - Horizontal en tablets, vertical en móviles */
+    /* Contact Cards - adaptar según espacio */
     .contact-cards {
         flex-direction: row;
-        max-width: clamp(450px, 70vw, 650px);
-        gap: clamp(15px, 2vw, 25px);
-        justify-content: space-between;
+        max-width: 90vw;
+        gap: 15px;
     }
     
     .contact-card {
         flex: 1;
-        padding: clamp(12px, 1.8vh, 20px);
+        padding: 15px 10px;
     }
     
-    .card-icon {
-        width: clamp(28px, 3.5vw, 40px);
-        height: clamp(28px, 3.5vw, 40px);
-        font-size: clamp(14px, 1.8vw, 20px);
-    }
-    
-    .card-content h3 {
-        font-size: clamp(13px, 1.2vw, 16px);
-    }
-    
-    .card-content p {
-        font-size: clamp(11px, 0.9vw, 13px);
-    }
-    
-    /* Projects */
-    .projects-content {
-        max-width: 90vw;
-    }
-    
+    /* Projects - una columna */
     .projects-grid {
         grid-template-columns: 1fr;
-        gap: clamp(20px, 3vw, 30px);
+        gap: 25px;
     }
     
-    .projects-section {
-        padding: clamp(30px, 4vw, 50px) clamp(15px, 2vw, 25px);
+    .projects-content {
+        max-width: 90vw;
     }
 }
 /* #endregion */
 
-/* #region Móviles (hasta 767px) */
-@media (max-width: 767px) {
-    /* Header móvil compacto */
+/* #region Móviles pequeños (máximo 600px) */
+@media (max-width: 600px) {
+    /* Header aún más compacto */
     .header-content {
-        max-width: 95vw;
-        padding: clamp(8px, 1.2vw, 15px);
-    }
-    
-    .logo {
-        width: clamp(3.2em, 4.5vw, 3.6em);
+        padding: 10px 15px;
+        gap: 10px;
     }
     
     .logo h1 {
-        font-size: clamp(1.1rem, 1.8vw, 1.5rem);
-    }
-    
-    @keyframes typeAndDelete {
-        0%, 10% { width: 0; }
-        45%, 55% { width: clamp(3.2em, 4.5vw, 3.6em); }
-        90%, 100% { width: 0; }
+        font-size: 1.3rem;
     }
     
     .main-nav ul {
-        gap: clamp(12px, 2vw, 20px);
-        flex-wrap: wrap;
+        gap: 15px;
+    }
+    
+    .main-nav a {
+        font-size: 1.1rem;
     }
     
     .selector {
-        gap: clamp(5px, 0.8vw, 8px);
+        top: 10px;
+        right: 15px;
+        gap: 8px;
     }
     
     .selector select {
-        padding: clamp(3px, 0.6vw, 6px) clamp(5px, 0.8vw, 8px);
-        font-size: clamp(0.6rem, 0.8vw, 0.9rem);
-        border-radius: 5px;
+        padding: 4px 8px;
+        font-size: 0.8rem;
     }
     
     .switch {
-        width: clamp(35px, 5vw, 45px);
-        height: clamp(18px, 2.5vw, 24px);
-        font-size: clamp(8px, 1.2vw, 12px);
+        width: 40px;
+        height: 22px;
     }
     
     .slider:before {
-        height: clamp(14px, 2vw, 20px);
-        width: clamp(14px, 2vw, 20px);
+        height: 18px;
+        width: 18px;
     }
     
     .input:checked + .slider:before {
-        transform: translateX(clamp(16px, 2.2vw, 20px));
+        transform: translateX(18px);
+    }
+    
+    .sun svg, .moon svg {
+        width: 14px;
+        height: 14px;
     }
     
     .sun svg {
-        width: clamp(10px, 1.5vw, 14px);
-        height: clamp(10px, 1.5vw, 14px);
-        top: clamp(2px, 0.4vw, 4px);
-        left: clamp(20px, 2.8vw, 24px);
+        left: 22px;
+        top: 4px;
     }
     
     .moon svg {
-        width: clamp(10px, 1.5vw, 14px);
-        height: clamp(10px, 1.5vw, 14px);
-        top: clamp(2px, 0.4vw, 3px);
-        left: clamp(2px, 0.4vw, 3px);
+        left: 4px;
+        top: 4px;
     }
 
-    /* Home Section móvil */
-    .home-section {
-        gap: clamp(20px, 3vh, 30px);
-        padding: clamp(15px, 3vh, 25px) clamp(10px, 2vw, 20px);
-    }
-    
+    /* Home simplificado */
     .hero-content {
-        max-width: 92vw;
-        gap: clamp(18px, 3vh, 28px);
-        padding: clamp(15px, 2.5vh, 25px) clamp(12px, 2vw, 20px);
-    }
-    
-    .profile-photo {
-        width: min(200px, 50vw);
-        height: min(200px, 50vw);
-    }
-    
-    /* Contact Cards - Vertical en móviles */
-    .contact-cards {
-        flex-direction: column;
-        max-width: clamp(280px, 60vw, 350px);
-        gap: clamp(10px, 1.5vh, 15px);
-    }
-    
-    .contact-card {
-        width: 100%;
-        flex: none;
-        padding: clamp(8px, 1.5vh, 15px);
-    }
-    
-    /* Projects móvil */
-    .projects-content {
+        gap: 20px;
+        padding: 20px 15px;
         max-width: 95vw;
     }
     
-    .projects-grid {
-        gap: clamp(15px, 2vw, 20px);
+    .profile-photo {
+        width: clamp(150px, 40vw, 200px);
+        height: clamp(150px, 40vw, 200px);
     }
     
+    /* Contact Cards - vertical en móviles */
+    .contact-cards {
+        flex-direction: column;
+        max-width: 300px;
+        gap: 12px;
+    }
+    
+    .contact-card {
+        padding: 12px;
+    }
+    
+    /* Projects móvil */
     .project-header {
         flex-direction: column;
-        gap: clamp(10px, 1.5vw, 15px);
+        gap: 12px;
         align-items: flex-start;
     }
     
     .project-links {
         flex-direction: column;
-        gap: clamp(8px, 1vw, 12px);
+        gap: 10px;
     }
     
     .project-link {
@@ -944,86 +833,4 @@ main::-webkit-scrollbar-thumb:hover {
 }
 /* #endregion */
 
-/* #region Móviles Pequeños (hasta 320px) */
-@media (max-width: 320px) {
-    .header-content {
-        padding: clamp(5px, 0.8vw, 8px);
-    }
-    
-    .logo {
-        width: clamp(2.8em, 3.5vw, 3.2em);
-    }
-    
-    .logo h1 {
-        font-size: clamp(0.9rem, 1.2vw, 1.1rem);
-    }
-    
-    @keyframes typeAndDelete {
-        0%, 10% { width: 0; }
-        45%, 55% { width: clamp(2.8em, 3.5vw, 3.2em); }
-        90%, 100% { width: 0; }
-    }
-    
-    .main-nav ul {
-        gap: clamp(8px, 1vw, 10px);
-    }
-    
-    .switch {
-        width: clamp(28px, 4vw, 35px);
-        height: clamp(15px, 2vw, 18px);
-    }
-    
-    .slider:before {
-        height: clamp(11px, 1.6vw, 14px);
-        width: clamp(11px, 1.6vw, 14px);
-    }
-    
-    .input:checked + .slider:before {
-        transform: translateX(clamp(13px, 1.8vw, 16px));
-    }
-    
-    .sun svg, .moon svg {
-        width: clamp(7px, 1vw, 10px);
-        height: clamp(7px, 1vw, 10px);
-    }
-    
-    .hero-content {
-        padding: clamp(10px, 1.5vw, 15px) clamp(8px, 1vw, 12px);
-    }
-    
-    .profile-photo {
-        width: min(150px, 45vw);
-        height: min(150px, 45vw);
-    }
-    
-    .contact-cards {
-        max-width: 240px;
-    }
-}
 /* #endregion */
-
-/* #region Optimización por Altura (landscape móviles y pantallas bajas) */
-@media (max-height: 700px) {
-    .home-section {
-        min-height: auto;
-        gap: clamp(15px, 2.5vh, 25px);
-        padding: clamp(15px, 2.5vh, 30px) clamp(15px, 2vw, 25px);
-        justify-content: center;
-    }
-    
-    .hero-content {
-        gap: clamp(12px, 2vh, 20px);
-        padding: clamp(12px, 2vh, 20px) clamp(15px, 2.5vw, 25px);
-    }
-    
-    .profile-photo {
-        width: min(180px, 25vw);
-        height: min(180px, 25vw);
-    }
-    
-    .contact-cards {
-        gap: clamp(8px, 1.5vw, 12px);
-    }
-}
-/* #endregion */
-
