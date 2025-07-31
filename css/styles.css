@@ -489,7 +489,7 @@ main::-webkit-scrollbar-thumb:hover {
 /* #region Proyectos Section */
 .projects-section {
      min-height: auto;
-     padding: clamp(40px, 6vw, 80px) clamp(30px, 4vw, 50px);
+     padding: clamp(40px, 6vw, 80px) clamp(30px, 4vw, 50px) clamp(80px, 10vh, 120px);
      background: var(--bg-proyects);
      margin-top: 0;
 }
@@ -719,7 +719,7 @@ main::-webkit-scrollbar-thumb:hover {
         padding: 15px 10px;
     }
     
-    /* Projects - una columna */
+    /* Projects - una columna con más margen inferior */
     .projects-grid {
         grid-template-columns: 1fr;
         gap: 25px;
@@ -727,6 +727,10 @@ main::-webkit-scrollbar-thumb:hover {
     
     .projects-content {
         max-width: 90vw;
+    }
+    
+    .projects-section {
+        padding-bottom: clamp(100px, 12vh, 150px);
     }
 }
 /* #endregion */
@@ -814,7 +818,7 @@ main::-webkit-scrollbar-thumb:hover {
         padding: 12px;
     }
     
-    /* Projects móvil */
+    /* Projects móvil con margen extra para barras de navegación */
     .project-header {
         flex-direction: column;
         gap: 12px;
@@ -829,6 +833,10 @@ main::-webkit-scrollbar-thumb:hover {
     .project-link {
         justify-content: center;
         text-align: center;
+    }
+    
+    .projects-section {
+        padding-bottom: clamp(120px, 15vh, 180px);
     }
 }
 /* #endregion */
