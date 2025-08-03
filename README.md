@@ -7,7 +7,7 @@
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black)
 
-[🌐 Live Demo](http://fresadev.eus) | [English](#english) | [Español](#español)
+[🌐 Live Demo](https://fresadev.eus) | [English](#english) | [Español](#español)
 
 ---
 
@@ -245,6 +245,6 @@ FresaDev/
 
 *AI Student & Frontend Developer*
 
-[⭐ Star this repo](https://github.com/Helen0614/FresaDev) • [🍓 Visit Portfolio](https://helen0614.github.io/FresaDev/)
+[⭐ Star this repo](https://github.com/Helen0614/FresaDev) • [🍓 Visit Portfolio](https://www.fresadev.eus)
 
 </div>
