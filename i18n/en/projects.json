@@ -1,5 +1,6 @@
 {
     "projectsTitle": "Projects",
     "digiNetDescription": "This project implements a multilayer neural network in pure C for classifying handwritten digits from the MNIST dataset.",
-    "snakeCDescription": "A project developing a classic Snake game in C, showcasing programming skills and game logic."
+    "snakeCDescription": "A project developing a classic Snake game in C, showcasing programming skills and game logic.",
+    "adaAgendaDescription": "A project developing a calendar in Ada, implementing functionalities with static and dynamic lists."
 }

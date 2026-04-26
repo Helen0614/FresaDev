@@ -1,5 +1,6 @@
 {
     "projectsTitle": "Proyectos",
     "digiNetDescription": "Este proyecto implementa una red neuronal multicapa en C puro para la clasificación de dígitos manuscritos del dataset MNIST.",
-    "snakeCDescription": "Un proyecto de desarrollo de un juego clásico de Snake en C, mostrando habilidades en programación y lógica de juegos."
+    "snakeCDescription": "Un proyecto de desarrollo de un juego clásico de Snake en C, mostrando habilidades en programación y lógica de juegos.",
+    "adaAgendaDescription": "Un proyecto de desarrollo de una agenda en Ada, implementando funcionalidades con listas estaticas y dinámicas."
 }
