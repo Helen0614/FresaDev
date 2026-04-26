@@ -2,5 +2,9 @@
   "name": "DigiNet",
   "tech": ["C"],
   "descriptionKey": "digiNetDescription",
+
+  "imagesFolder": "diginet",
+  "images": ["1.jpg", "2.jpg", "3.jpg"],
+
   "link": "https://github.com/Helen0614/DigiNet"
 }

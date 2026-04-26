@@ -1,0 +1,10 @@
+{
+  "name": "Ejemplo",
+  "tech": ["L1", "L2"],
+  "descriptionKey": "descripcionEjemplo",
+
+  "imagesFolder": "ejemplo",
+  "images": ["1.png", "2.png", "3.png"],
+
+  "link": "https://github.com/Helen0614/ejemplo (opcional)"
+}

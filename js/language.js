@@ -46,25 +46,41 @@ document.addEventListener('DOMContentLoaded', () => {
 // Cargar archivo JSON y aplicar traducciones
 async function loadLanguage(language) {
     try {
-        const res = await fetch(`./i18n/${language}.json`);
-        const translations = await res.json();
+        const files = ["common", "home", "projects"];
+
+        const responses = await Promise.all(
+            files.map(file =>
+                fetch(`./i18n/${language}/${file}.json`)
+            )
+        );
+
+        const jsons = await Promise.all(
+            responses.map(r => r.json())
+        );
+
+        const translations = Object.assign({}, ...jsons);
+
         applyTranslations(translations);
+
         console.log(`Idioma cargado: ${language}`);
     } catch (err) {
-        console.error(`Error cargando ${language}.json`, err);
+        console.error(`Error cargando idioma ${language}`, err);
     }
 }
 
 // Aplicar traducciones al DOM
 function applyTranslations(trans) {
-    // Actualizar enlaces de navegación si existen
-    const homeLink = document.querySelector('a[href="#home"]');
-    const projectsLink = document.querySelector('a[href="#projects"]');
 
-    if (homeLink && trans.home) homeLink.textContent = trans.home;
-    if (projectsLink && trans.projects) projectsLink.textContent = trans.projects;
+    // navegación
+    document.querySelectorAll('a[href="#home"]').forEach(el => {
+        if (trans.home) el.textContent = trans.home;
+    });
 
-    // Elementos con data-translate
+    document.querySelectorAll('a[href="#projects"]').forEach(el => {
+        if (trans.projects) el.textContent = trans.projects;
+    });
+
+    // elementos data-translate
     document.querySelectorAll('[data-translate]').forEach(el => {
         const key = el.getAttribute('data-translate');
         if (trans[key]) {

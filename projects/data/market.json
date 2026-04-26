@@ -1,0 +1,8 @@
+{
+  "name": "Market",
+  "tech": ["Java", "UML", "JCDB"],
+  "descriptionKey": "marketDescription",
+
+  "imagesFolder": "market",
+  "images": ["1.jpg", "2.jpg", "3.jpg"]
+}

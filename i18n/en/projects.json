@@ -1,0 +1,5 @@
+{
+    "projectsTitle": "Projects",
+    "digiNetDescription": "This project implements a multilayer neural network in pure C for classifying handwritten digits from the MNIST dataset.",
+    "snakeCDescription": "A project developing a classic Snake game in C, showcasing programming skills and game logic."
+}

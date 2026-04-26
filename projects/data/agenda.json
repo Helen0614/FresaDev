@@ -1,0 +1,10 @@
+{
+  "name": "Agenda",
+  "tech": ["Ada"],
+  "descriptionKey": "adaAgendaDescription",
+  
+  "imagesFolder": "adaagenda",
+  "images": ["1.png", "2.png"],
+
+  "link": "https://github.com/Helen0614/AgendaADA"
+}

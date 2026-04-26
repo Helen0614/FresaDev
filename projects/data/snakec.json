@@ -2,5 +2,9 @@
   "name": "Snake_C",
   "tech": ["C"],
   "descriptionKey": "snakeCDescription",
+
+  "imagesFolder": "snakec",
+  "images": ["1.png", "2.png", "3.png", "4.png", "5.png"],
+
   "link": "https://github.com/Helen0614/Snake_C"
 }
